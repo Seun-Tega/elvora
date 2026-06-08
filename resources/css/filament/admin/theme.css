@@ -1,0 +1,367 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+@theme {
+    --color-brand-primary: #003366;
+    --color-brand-accent: #CC9933;
+    
+    --color-elvora-navy-50: #eef6ff;
+    --color-elvora-navy-100: #d8ebff;
+    --color-elvora-navy-200: #b5d7ff;
+    --color-elvora-navy-300: #7eb7ff;
+    --color-elvora-navy-400: #4092ff;
+    --color-elvora-navy-500: #0b4f8f;
+    --color-elvora-navy-600: #003e7a;
+    --color-elvora-navy-700: #003366;
+    --color-elvora-navy-800: #00264d;
+    --color-elvora-navy-900: #001c38;
+    --color-elvora-navy-950: #061427;
+    
+    --color-elvora-gold-50: #fbf6e9;
+    --color-elvora-gold-100: #f4e9c7;
+    --color-elvora-gold-200: #e8d08c;
+    --color-elvora-gold-300: #dbb350;
+    --color-elvora-gold-400: #cc9933;
+    --color-elvora-gold-500: #b38024;
+    --color-elvora-gold-600: #946517;
+    --color-elvora-gold-700: #754c0e;
+    --color-elvora-gold-800: #593808;
+    --color-elvora-gold-900: #402602;
+    --color-elvora-gold-950: #291600;
+
+    --shadow-premium: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+    --shadow-premium-hover: 0 10px 20px -5px rgba(0, 0, 0, 0.04), 0 3px 8px -1px rgba(0, 0, 0, 0.02);
+}
+
+:root {
+    --elvora-bg: #F8FAFC;
+    --elvora-surface: #FFFFFF;
+    --elvora-surface-muted: #F1F5F9;
+    --elvora-border: rgba(15, 23, 42, 0.06);
+    --elvora-text: #0F172A;
+    --elvora-muted: #64748B;
+    --elvora-primary: #003366;
+    --elvora-accent: #CC9933;
+    --elvora-radius: 0.375rem;
+    --elvora-radius-lg: 0.5rem;
+    --elvora-focus: 0 0 0 2px rgba(0, 51, 102, 0.12);
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+.dark {
+    --elvora-bg: #0B0F19;
+    --elvora-surface: #111827;
+    --elvora-surface-muted: #1E293B;
+    --elvora-border: rgba(255, 255, 255, 0.05);
+    --elvora-text: #F8FAFC;
+    --elvora-muted: #94A3B8;
+    --elvora-focus: 0 0 0 2px rgba(204, 153, 51, 0.25);
+}
+
+/* Base Body Styling */
+body {
+    background-color: var(--elvora-bg) !important;
+    color: var(--elvora-text) !important;
+    font-family: var(--font-sans) !important;
+    letter-spacing: -0.011em;
+}
+
+/* Premium Layout & Sidebar Overrides (Linear style) */
+.fi-sidebar {
+    background-color: var(--elvora-surface) !important;
+    border-right: 1px solid var(--elvora-border) !important;
+}
+
+.fi-sidebar-header {
+    border-bottom: 1px solid var(--elvora-border) !important;
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+}
+
+.fi-sidebar-group {
+    margin-top: 0.75rem !important;
+}
+
+.fi-sidebar-group-label {
+    font-family: var(--font-sans) !important;
+    font-size: 0.65rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: var(--elvora-muted) !important;
+    margin-bottom: 0.35rem !important;
+    padding-left: 0.75rem !important;
+}
+
+.fi-sidebar-item-button {
+    margin: 0.15rem 0.5rem !important;
+    padding: 0.45rem 0.75rem !important;
+    font-size: 0.825rem !important;
+    font-weight: 500 !important;
+    color: var(--elvora-muted) !important;
+    border-radius: var(--elvora-radius) !important;
+    transition: all 0.15s ease-in-out !important;
+}
+
+.fi-sidebar-item-button:hover {
+    background-color: var(--elvora-surface-muted) !important;
+    color: var(--elvora-text) !important;
+}
+
+.fi-sidebar-item-active > .fi-sidebar-item-button {
+    background-color: rgba(0, 51, 102, 0.06) !important;
+    color: var(--elvora-primary) !important;
+    font-weight: 600 !important;
+}
+
+.dark .fi-sidebar-item-active > .fi-sidebar-item-button {
+    background-color: rgba(204, 153, 51, 0.08) !important;
+    color: var(--elvora-accent) !important;
+}
+
+/* Topbar Styling (Vercel style) */
+.fi-topbar {
+    border-bottom: 1px solid var(--elvora-border) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    background-color: rgba(248, 250, 252, 0.8) !important;
+}
+
+.dark .fi-topbar {
+    background-color: rgba(11, 15, 25, 0.8) !important;
+}
+
+/* Search Box Customization (Vercel cmd palette style) */
+.fi-global-search-field {
+    max-width: 28rem !important;
+}
+
+.fi-global-search-field input {
+    background-color: var(--elvora-surface-muted) !important;
+    border: 1px solid var(--elvora-border) !important;
+    border-radius: var(--elvora-radius) !important;
+    font-size: 0.825rem !important;
+    padding: 0.4rem 0.75rem 0.4rem 2.25rem !important;
+    transition: all 0.2s ease-in-out !important;
+    box-shadow: none !important;
+}
+
+.fi-global-search-field input:focus {
+    background-color: var(--elvora-surface) !important;
+    border-color: var(--elvora-primary) !important;
+    box-shadow: var(--elvora-focus) !important;
+}
+
+.dark .fi-global-search-field input:focus {
+    border-color: var(--elvora-accent) !important;
+}
+
+/* Custom Card Layout Overrides (Stripe style) */
+.fi-section, .fi-card, .fi-wi-widget {
+    background-color: var(--elvora-surface) !important;
+    border: 1px solid var(--elvora-border) !important;
+    border-radius: var(--elvora-radius-lg) !important;
+    box-shadow: var(--shadow-premium) !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.fi-section:hover, .fi-card:hover {
+    box-shadow: var(--shadow-premium-hover) !important;
+}
+
+/* Stats Overview Section (High density premium Stripe cards) */
+.fi-wi-stats-overview {
+    gap: 0.75rem !important;
+}
+
+.fi-wi-stats-overview-stat {
+    padding: 1.25rem !important;
+    background-color: var(--elvora-surface) !important;
+    border: 1px solid var(--elvora-border) !important;
+    border-radius: var(--elvora-radius-lg) !important;
+    box-shadow: var(--shadow-premium) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.fi-wi-stats-overview-stat::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--elvora-primary), var(--elvora-accent));
+    opacity: 0.7;
+}
+
+.fi-wi-stats-overview-stat-label {
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    color: var(--elvora-muted) !important;
+}
+
+.fi-wi-stats-overview-stat-value {
+    font-size: 1.625rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.025em !important;
+    color: var(--elvora-text) !important;
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+}
+
+.fi-wi-stats-overview-stat-description {
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    color: var(--elvora-muted) !important;
+}
+
+/* Tables Redesign (Dense data, clear hierarchy) */
+.fi-ta-header-cell {
+    background-color: var(--elvora-surface-muted) !important;
+    border-bottom: 1px solid var(--elvora-border) !important;
+    padding: 0.625rem 0.85rem !important;
+}
+
+.fi-ta-header-cell span {
+    font-family: var(--font-sans) !important;
+    font-size: 0.65rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    color: var(--elvora-muted) !important;
+}
+
+.fi-ta-cell {
+    padding: 0.55rem 0.85rem !important;
+    font-size: 0.825rem !important;
+    color: var(--elvora-text) !important;
+    border-bottom: 1px solid var(--elvora-border) !important;
+}
+
+.fi-ta-row {
+    transition: background-color 0.15s ease !important;
+}
+
+.fi-ta-row:hover {
+    background-color: rgba(0, 51, 102, 0.02) !important;
+}
+
+.dark .fi-ta-row:hover {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Monospace alignment for table numbers / codes */
+.fi-ta-cell-numeric, .fi-ta-cell-datetime, .fi-ta-cell-id {
+    font-family: var(--font-mono) !important;
+    font-size: 0.78rem !important;
+}
+
+/* Forms Redesign */
+.fi-input-wrp {
+    border: 1px solid var(--elvora-border) !important;
+    border-radius: var(--elvora-radius) !important;
+    background-color: var(--elvora-surface) !important;
+    transition: all 0.2s ease !important;
+    box-shadow: none !important;
+}
+
+.fi-input-wrp:focus-within {
+    border-color: var(--elvora-primary) !important;
+    box-shadow: var(--elvora-focus) !important;
+}
+
+.dark .fi-input-wrp:focus-within {
+    border-color: var(--elvora-accent) !important;
+}
+
+.fi-input {
+    font-size: 0.825rem !important;
+    padding: 0.45rem 0.75rem !important;
+}
+
+.fi-fo-field-wrp-label label {
+    font-size: 0.78rem !important;
+    font-weight: 600 !important;
+    color: var(--elvora-text) !important;
+}
+
+.fi-fo-field-wrp-helper {
+    font-size: 0.72rem !important;
+    color: var(--elvora-muted) !important;
+    margin-top: 0.25rem !important;
+}
+
+/* Badges Redesign (Subtle bg tints + solid thin borders) */
+.fi-badge {
+    border-radius: 9999px !important;
+    font-size: 0.68rem !important;
+    font-weight: 600 !important;
+    padding: 0.125rem 0.5rem !important;
+    border: 1px solid currentColor !important;
+    background-color: transparent !important;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #334155;
+}
+
+/* Executive Command Center Overrides */
+.elvora-command-hero {
+    background: 
+        linear-gradient(135deg, rgba(0, 51, 102, 0.96), rgba(6, 20, 39, 0.98)),
+        radial-gradient(circle at top right, rgba(204, 153, 51, 0.3), transparent 45%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    box-shadow: var(--shadow-premium) !important;
+}
+
+.elvora-health-card {
+    border: 1px solid var(--elvora-border) !important;
+    background: var(--elvora-surface) !important;
+    box-shadow: var(--shadow-premium) !important;
+}
+
+.elvora-command-metrics > div {
+    border: 1px solid var(--elvora-border) !important;
+    background: var(--elvora-surface) !important;
+    box-shadow: var(--shadow-premium) !important;
+    transition: all 0.2s ease !important;
+}
+
+.elvora-command-metrics > div:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-premium-hover) !important;
+}
+
+.elvora-priority-strip > div {
+    border: 1px solid var(--elvora-border) !important;
+    background-color: var(--elvora-surface) !important;
+    box-shadow: var(--shadow-premium) !important;
+}
+
+/* Custom Micro-animations */
+.fi-wi-stats-overview-stat, .fi-section, .fi-ta-row, .fi-btn {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter !important;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition-duration: 200ms !important;
+}
