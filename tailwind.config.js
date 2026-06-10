@@ -13,28 +13,34 @@ export default {
         extend: {
             colors: {
                 brand: {
-                    primary: '#001e40',
-                    primaryDark: '#00132b',
-                    secondary: '#cc9933', // Updated to requested CC9933
-                    secondaryDark: '#997326',
-                    // Semantic Tokens
-                    bg: {
-                        light: '#FAFAFA', // Ultra clean white/gray
-                        dark: '#000000', // Pure black like Vercel/Linear
+                    primary: '#003366',
+                    primaryDark: '#001F3D',
+                    secondary: '#CC9933',
+                    secondaryDark: '#99701F',
+                    bg: '#FFFFFF',
+                    surfaceLight: '#F8FAFC',
+                    surfaceDark: '#0F172A',
+                    borderLight: '#E2E8F0',
+                    textDark: '#0F172A',
+                    textMuted: '#475569',
+                    // Semantic Tokens (Keeping these for compatibility)
+                    semanticBg: {
+                        light: '#FAFAFA',
+                        dark: '#000000',
                     },
                     surface: {
-                        light: '#FFFFFF', // Pure white
-                        dark: '#0A0A0A', // Near black for cards
+                        light: '#FFFFFF',
+                        dark: '#0A0A0A',
                     },
                     border: {
-                        light: '#E2E8F0', // Slate 200
-                        dark: '#1e293b', // Slate 800
+                        light: '#E2E8F0',
+                        dark: '#1e293b',
                     },
                     text: {
                         primary: '#0F172A',
-                        muted: '#64748b', // Slate 500
+                        muted: '#64748b',
                         dark: '#F8FAFC',
-                        darkMuted: '#94a3b8', // Slate 400
+                        darkMuted: '#94a3b8',
                     }
                 },
                 // Material Design 3 unified tokens (used in blog)

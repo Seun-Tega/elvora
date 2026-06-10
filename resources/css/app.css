@@ -1,6 +1,82 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+
+@theme {
+    /* Brand Primary Colors */
+    --color-brand-primary: #003366;
+    --color-brand-primaryDark: #001F3D;
+    
+    /* Brand Secondary Colors */
+    --color-brand-secondary: #CC9933;
+    --color-brand-secondaryDark: #99701F;
+    
+    /* Brand Semantic Surfaces */
+    --color-brand-bg: #FFFFFF;
+    --color-brand-surfaceLight: #F8FAFC;
+    --color-brand-surfaceDark: #0F172A;
+    --color-brand-borderLight: #E2E8F0;
+    
+    /* Brand Typography */
+    --color-brand-textDark: #0F172A;
+    --color-brand-textMuted: #475569;
+
+    /* Font Families */
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Outfit', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Semantic Aliases */
+    --color-brand-bg-light: #FAFAFA;
+    --color-brand-bg-dark: #000000;
+    --color-brand-text-primary: #0F172A;
+    --color-brand-text-dark: #F8FAFC;
+    --color-brand-surface-light: #FFFFFF;
+    --color-brand-surface-dark: #0A0A0A;
+    --color-brand-border-light: #E2E8F0;
+    --color-brand-border-dark: #1e293b;
+
+    /* Material Design 3 unified tokens */
+    --color-surface: #f8f9ff;
+    --color-on-surface: #0b1c30;
+    --color-surface-variant: #d3e4fe;
+    --color-on-surface-variant: #43474f;
+    --color-outline-variant: #c3c6d1;
+    --color-primary-container: #003366;
+    --color-secondary-container: #fec65c;
+    --color-on-secondary-container: #745200;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #eff4ff;
+
+    /* Custom Shadow Tokens */
+    --shadow-premium: 0 10px 30px -10px rgba(0, 51, 102, 0.08), 0 1px 3px 0 rgba(0, 0, 0, 0.02);
+    --shadow-premiumHover: 0 20px 40px -15px rgba(0, 51, 102, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.03);
+    --shadow-dark: 0 10px 30px -10px rgba(0, 0, 0, 0.6), 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 20px rgba(204, 153, 51, 0.4);
+
+    /* Keyframes */
+    @keyframes gradient-x {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+    }
+    @keyframes float-slow {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+    @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+    @keyframes scan {
+        0% { transform: translateY(-100%); opacity: 0; }
+        50% { opacity: 0.5; }
+        100% { transform: translateY(100%); opacity: 0; }
+    }
+
+    /* Animation Utilities */
+    --animate-gradient-x: gradient-x 3s ease infinite;
+    --animate-float-slow: float-slow 4s ease-in-out infinite;
+    --animate-scan: scan 4s linear infinite;
+}
 
 @layer base {
     html {
@@ -43,7 +119,7 @@
     }
     
     .glass-header {
-        @apply bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl border-b border-brand-border-light dark:border-brand-border-dark;
+        @apply bg-white/70 dark:bg-brand-primaryDark/85 backdrop-blur-xl border-b border-brand-border-light dark:border-white/10 transition-all duration-300;
     }
     
     .grid-dots {
@@ -55,13 +131,47 @@
         background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px);
     }
     
-    /* Interactive Card Hover Effects */
     .hover-card-trigger {
-        @apply transition-all duration-300 ease-out;
+        @apply transition-all duration-500 ease-out;
     }
     
     .hover-card-trigger:hover {
-        @apply -translate-y-1 shadow-premiumHover dark:shadow-dark border-brand-border-light dark:border-brand-secondary/30 bg-white dark:bg-slate-900;
+        @apply -translate-y-2 shadow-premiumHover dark:shadow-dark border-brand-primary/20 dark:border-white/20 bg-white dark:bg-slate-900;
+    }
+
+    .mask-marquee {
+        mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    }
+
+    .glow-orb {
+        @apply absolute w-[600px] h-[600px] rounded-full blur-[60px] pointer-events-none z-0 transition-opacity duration-1000;
+        background: radial-gradient(circle, rgba(204, 153, 51, 0.08) 0%, transparent 70%);
+    }
+
+    .dark .glow-orb {
+        background: radial-gradient(circle, rgba(204, 153, 51, 0.15) 0%, transparent 70%);
+    }
+
+    .glass-panel-premium {
+        @apply backdrop-blur-2xl border border-white/10 bg-white/5;
+    }
+
+    .text-glow {
+        text-shadow: 0 0 20px rgba(204, 153, 51, 0.2);
+    }
+
+    .scanner-line {
+        @apply h-10 animate-scan;
+        background: linear-gradient(to bottom, transparent, rgba(204, 153, 51, 0.1), transparent);
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 
     /* Alpine.js Scroll Reveal Classes */

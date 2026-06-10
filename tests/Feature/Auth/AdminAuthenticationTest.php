@@ -19,10 +19,8 @@ test('admin user can authenticate using livewire login', function () {
     $user->assignRole($adminRole);
 
     Livewire::test(CustomLogin::class)
-        ->fillForm([
-            'email' => $user->email,
-            'password' => 'password',
-        ])
+        ->set('data.email', $user->email)
+        ->set('data.password', 'password')
         ->call('authenticate')
         ->assertHasNoErrors();
 
@@ -31,10 +29,8 @@ test('admin user can authenticate using livewire login', function () {
 
 test('invalid admin user cannot authenticate', function () {
     Livewire::test(CustomLogin::class)
-        ->fillForm([
-            'email' => 'invalid@elvora.com',
-            'password' => 'wrong-password',
-        ])
+        ->set('data.email', 'invalid@elvora.com')
+        ->set('data.password', 'wrong-password')
         ->call('authenticate')
         ->assertHasErrors(['data.email']);
 

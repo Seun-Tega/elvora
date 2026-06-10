@@ -18,204 +18,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 
-    <!-- Alpine.js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Vite (Auto-Refresh & HMR) -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <!-- Tailwind Configured for Stripe/Linear Style Redesign -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            primary: '#003366',
-                            primaryDark: '#001F3D',
-                            secondary: '#CC9933',
-                            secondaryDark: '#99701F',
-                            bg: '#FFFFFF',
-                            surfaceLight: '#F8FAFC',
-                            surfaceDark: '#0F172A',
-                            borderLight: '#E2E8F0',
-                            textDark: '#0F172A',
-                            textMuted: '#475569',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Outfit', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    boxShadow: {
-                        premium: '0 10px 30px -10px rgba(0, 51, 102, 0.08), 0 1px 3px 0 rgba(0, 0, 0, 0.02)',
-                        premiumHover: '0 20px 40px -15px rgba(0, 51, 102, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.03)',
-                    }
-                }
-            }
-        }
-    </script>
     <script>
         // Apply theme immediately to prevent FOUC
-        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        if (savedTheme === 'dark') {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
     </script>
-
-    <!-- Custom Premium Styles (Glassmorphism & Animation Specs) -->
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
-        }
-        .glass-header {
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: background 0.3s, border-color 0.3s;
-        }
-        .grid-dots {
-            background-image: radial-gradient(circle, #E2E8F0 1.5px, transparent 1.5px);
-            background-size: 24px 24px;
-        }
-        .grid-dots-dark {
-            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px);
-            background-size: 24px 24px;
-        }
-        .hover-card-trigger {
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .hover-card-trigger:hover {
-            transform: translateY(-8px) scale(1.01);
-        }
-        .mask-marquee {
-            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-        }
-        .glow-orb {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(204, 153, 51, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 0;
-            filter: blur(60px);
-        }
-        .glass-panel-premium {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .text-glow {
-            text-shadow: 0 0 20px rgba(204, 153, 51, 0.2);
-        }
-        @keyframes scan {
-            0% { transform: translateY(-100%); opacity: 0; }
-            50% { opacity: 0.5; }
-            100% { transform: translateY(100%); opacity: 0; }
-        }
-        .scanner-line {
-            height: 40px;
-            background: linear-gradient(to bottom, transparent, rgba(204, 153, 51, 0.1), transparent);
-            animation: scan 4s linear infinite;
-        }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        /* Premium Dark Mode Styles */
-        .dark body {
-            background-color: #001F3D; /* brand-primaryDark */
-            color: #F8FAFC;
-        }
-        .dark .glass-header {
-            background: rgba(0, 31, 61, 0.85); /* branded primaryDark tint */
-            border-color: rgba(255, 255, 255, 0.08);
-        }
-        .dark #mobile-drawer {
-            background-color: #001F3D;
-            border-color: rgba(255, 255, 255, 0.08);
-        }
-        .dark .bg-white {
-            background-color: #003366 !important; /* brand-primary */
-        }
-        .dark .bg-brand-surfaceLight {
-            background-color: #001F3D !important; /* brand-primaryDark */
-        }
-        .dark .text-brand-primary {
-            color: #F8FAFC !important;
-        }
-        .dark .text-brand-textDark {
-            color: #E2E8F0 !important;
-        }
-        .dark .text-brand-textMuted {
-            color: #94A3B8 !important;
-        }
-        .dark .border-brand-borderLight {
-            border-color: rgba(255, 255, 255, 0.08) !important;
-        }
-        .dark .bg-blue-50 {
-            background-color: rgba(0, 51, 102, 0.5) !important;
-        }
-        .dark .border-blue-100 {
-            border-color: rgba(255, 255, 255, 0.08) !important;
-        }
-        .dark .hover\:bg-slate-50:hover {
-            background-color: #003366 !important;
-        }
-        .dark .bg-slate-50 {
-            background-color: #001F3D !important;
-        }
-        .dark .text-slate-900 {
-            color: #F8FAFC !important;
-        }
-        .dark .text-slate-500 {
-            color: #94A3B8 !important;
-        }
-        .dark .glow-orb {
-            background: radial-gradient(circle, rgba(204, 153, 51, 0.15) 0%, transparent 70%);
-        }
-    </style>
     @yield('head')
 </head>
-<body class="bg-brand-bg text-brand-textDark font-sans antialiased selection:bg-brand-secondary/20 overflow-x-hidden transition-colors duration-300">
+<body class="bg-brand-bg text-brand-textDark font-sans antialiased selection:bg-brand-secondary/20 overflow-x-hidden transition-colors duration-500">
 
     <!-- ========================================== -->
     <!--          SECTION 1 — NAVIGATION            -->
     <!-- ========================================== -->
     <header id="nav-header" 
-            x-data="{ mobileOpen: false, industriesOpen: false }"
+            x-data="{ 
+                mobileOpen: false, 
+                industriesOpen: false,
+                isScrolled: false,
+                init() {
+                    window.addEventListener('scroll', () => {
+                        this.isScrolled = window.scrollY > 20;
+                    });
+                }
+            }"
             @click.away="industriesOpen = false"
-            class="fixed top-0 w-full z-50 glass-header border-b border-brand-borderLight transition-all duration-300 py-5">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 flex justify-between items-center">
-            <a href="{{ route('home') }}" class="flex items-center gap-3 group transition-opacity duration-300 hover:opacity-90">
+            class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out px-4 py-4 lg:py-6"
+            :class="isScrolled ? 'pt-4' : 'pt-6'">
+        
+        <div class="max-w-[1400px] mx-auto px-6 py-3 md:px-8 flex justify-between items-center transition-all duration-500 rounded-full border border-transparent shadow-none"
+             :class="isScrolled ? 'bg-white/80 dark:bg-brand-primaryDark/80 backdrop-blur-xl border-brand-borderLight dark:border-white/10 shadow-premium py-3' : 'py-4'">
+            
+            <a href="{{ route('home') }}" class="flex items-center gap-3 group transition-all duration-300">
                 <div class="relative flex items-center justify-center">
-                    <img src="{{ asset('images/elvora-logo.png') }}" alt="Elvora Innovation" class="h-9 w-auto object-contain transition-all duration-500 group-hover:scale-105 group-hover:drop-shadow-[0_0_15px_rgba(204,153,51,0.3)]">
+                    <img src="{{ asset('images/elvora-logo.png') }}" alt="Elvora Innovation" class="h-9 w-auto object-contain transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:drop-shadow-[0_0_15px_rgba(204,153,51,0.4)]">
                 </div>
                 <div class="flex flex-col">
-                    <span class="font-display font-bold text-xl leading-tight text-brand-primary tracking-tight">Elvora Innovation</span>
-                    <span class="text-[9px] font-bold tracking-[0.2em] text-brand-secondary opacity-80 group-hover:opacity-100 transition-opacity">Structure, Growth &amp; Legacy</span>
+                    <span class="font-display font-black text-xl leading-tight text-brand-primary dark:text-white tracking-tighter transition-colors group-hover:text-brand-secondary">Elvora Innovation</span>
+                    <span class="text-[8px] font-black tracking-[0.3em] uppercase text-brand-secondary opacity-70 group-hover:opacity-100 transition-opacity">Digital Engineering</span>
                 </div>
             </a>
             
-            <nav class="hidden lg:flex items-center space-x-8 font-medium">
-                <a href="{{ route('about') }}" class="text-brand-textMuted hover:text-brand-primary transition-colors text-sm @if(Request::routeIs('about')) text-brand-primary font-bold border-b-2 border-brand-primary pb-1 @endif">About</a>
-                <a href="{{ route('services') }}" class="text-brand-textMuted hover:text-brand-primary transition-colors text-sm @if(Request::routeIs('services')) text-brand-primary font-bold border-b-2 border-brand-primary pb-1 @endif">Services</a>
+            <nav class="hidden lg:flex items-center space-x-1 font-semibold">
+                <a href="{{ route('about') }}" class="px-4 py-2 text-brand-textMuted dark:text-slate-400 hover:text-brand-primary dark:hover:text-white transition-all text-sm rounded-full hover:bg-brand-primary/5 dark:hover:bg-white/5 @if(Request::routeIs('about')) text-brand-primary dark:text-white bg-brand-primary/5 dark:bg-white/5 @endif">About</a>
+                <a href="{{ route('services') }}" class="px-4 py-2 text-brand-textMuted dark:text-slate-400 hover:text-brand-primary dark:hover:text-white transition-all text-sm rounded-full hover:bg-brand-primary/5 dark:hover:bg-white/5 @if(Request::routeIs('services')) text-brand-primary dark:text-white bg-brand-primary/5 dark:bg-white/5 @endif">Services</a>
 
-                <!-- Dropdown using Alpine -->
+                <!-- Dropdown -->
                 <div class="relative" @mouseenter="industriesOpen = true" @mouseleave="industriesOpen = false">
-                    <button class="flex items-center gap-1 text-brand-textMuted hover:text-brand-primary transition-colors text-sm font-medium py-2 @if(Request::is('industries*')) text-brand-primary font-bold @endif">
+                    <button class="flex items-center gap-1 px-4 py-2 text-brand-textMuted dark:text-slate-400 hover:text-brand-primary dark:hover:text-white transition-all text-sm rounded-full hover:bg-brand-primary/5 dark:hover:bg-white/5 @if(Request::is('industries*')) text-brand-primary dark:text-white @endif">
                         <span>Industries</span>
-                        <span class="material-symbols-outlined text-[16px] transition-transform duration-200" :class="industriesOpen ? 'rotate-180' : ''">keyboard_arrow_down</span>
+                        <span class="material-symbols-outlined text-[18px] transition-transform duration-300" :class="industriesOpen ? 'rotate-180' : ''">expand_more</span>
                     </button>
                     <div x-show="industriesOpen"
                          x-transition:enter="transition ease-out duration-200"
@@ -224,95 +84,89 @@
                          x-transition:leave="transition ease-in duration-150"
                          x-transition:leave-start="opacity-100 translate-y-0"
                          x-transition:leave-end="opacity-0 translate-y-1"
-                         class="absolute left-0 mt-1 w-64 bg-white border border-brand-borderLight rounded-xl shadow-premium p-2 z-50"
+                         class="absolute left-0 mt-2 w-64 bg-white dark:bg-slate-900 border border-brand-borderLight dark:border-white/10 rounded-xl shadow-premium p-2 z-50"
                          style="display: none;">
-                        <a href="{{ route('industries.healthcare') }}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 transition-colors">
-                            <span class="material-symbols-outlined text-brand-primary text-lg">health_and_safety</span>
+                        <a href="{{ route('industries.healthcare') }}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+                            <span class="material-symbols-outlined text-brand-primary dark:text-brand-secondary text-lg">health_and_safety</span>
                             <div>
-                                <p class="text-xs font-bold text-brand-primary">Healthcare</p>
-                                <p class="text-[10px] text-brand-textMuted">Simple tools for health teams</p>
+                                <p class="text-xs font-bold text-brand-primary dark:text-white">Healthcare</p>
+                                <p class="text-[10px] text-brand-textMuted dark:text-slate-400">Simple tools for health teams</p>
                             </div>
                         </a>
-                        <a href="{{ route('industries.fintech') }}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 transition-colors">
-                            <span class="material-symbols-outlined text-brand-primary text-lg">account_balance</span>
+                        <a href="{{ route('industries.fintech') }}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+                            <span class="material-symbols-outlined text-brand-primary dark:text-brand-secondary text-lg">account_balance</span>
                             <div>
-                                <p class="text-xs font-bold text-brand-primary">Money &amp; Banking</p>
-                                <p class="text-[10px] text-brand-textMuted">Easy online money management</p>
+                                <p class="text-xs font-bold text-brand-primary dark:text-white">Money &amp; Banking</p>
+                                <p class="text-[10px] text-brand-textMuted dark:text-slate-400">Secure financial software</p>
                             </div>
                         </a>
-                        <a href="{{ route('industries.logistics') }}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 transition-colors">
-                            <span class="material-symbols-outlined text-brand-primary text-lg">local_shipping</span>
+                        <a href="{{ route('industries.logistics') }}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+                            <span class="material-symbols-outlined text-brand-primary dark:text-brand-secondary text-lg">local_shipping</span>
                             <div>
-                                <p class="text-xs font-bold text-brand-primary">Shipping &amp; Delivery</p>
-                                <p class="text-[10px] text-brand-textMuted">Better ways to track goods</p>
+                                <p class="text-xs font-bold text-brand-primary dark:text-white">Shipping &amp; Delivery</p>
+                                <p class="text-[10px] text-brand-textMuted dark:text-slate-400">Smart supply chain systems</p>
                             </div>
                         </a>
-                        <a href="{{ route('industries.enterprise') }}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 transition-colors">
-                            <span class="material-symbols-outlined text-brand-primary text-lg">gavel</span>
+                        <a href="{{ route('industries.enterprise') }}" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+                            <span class="material-symbols-outlined text-brand-primary dark:text-brand-secondary text-lg">domain</span>
                             <div>
-                                <p class="text-xs font-bold text-brand-primary">Large Companies</p>
-                                <p class="text-[10px] text-brand-textMuted">Tools built for large teams</p>
+                                <p class="text-xs font-bold text-brand-primary dark:text-white">Large Companies</p>
+                                <p class="text-[10px] text-brand-textMuted dark:text-slate-400">Custom tools for big teams</p>
                             </div>
                         </a>
                     </div>
                 </div>
-                <a href="{{ route('blog') }}" class="text-brand-textMuted hover:text-brand-primary transition-colors text-sm @if(Request::routeIs('blog') || Request::routeIs('blog.show')) text-brand-primary @endif">Blog</a>
-                <a href="{{ route('contact') }}" class="text-brand-textMuted hover:text-brand-primary transition-colors text-sm @if(Request::routeIs('contact')) text-brand-primary font-bold border-b-2 border-brand-primary pb-1 @endif">Contact</a>
+                <a href="{{ route('blog') }}" class="px-4 py-2 text-brand-textMuted dark:text-slate-400 hover:text-brand-primary dark:hover:text-white transition-all text-sm rounded-full hover:bg-brand-primary/5 dark:hover:bg-white/5 @if(Request::routeIs('blog')) text-brand-primary dark:text-white bg-brand-primary/5 dark:bg-white/5 @endif">Blog</a>
+                <a href="{{ route('contact') }}" class="px-4 py-2 text-brand-textMuted dark:text-slate-400 hover:text-brand-primary dark:hover:text-white transition-all text-sm rounded-full hover:bg-brand-primary/5 dark:hover:bg-white/5 @if(Request::routeIs('contact')) text-brand-primary dark:text-white bg-brand-primary/5 dark:bg-white/5 @endif">Contact</a>
             </nav>
 
-            <div class="hidden lg:flex items-center space-x-6">
-                <!-- Theme Toggle Button -->
-                <button class="theme-toggle-btn p-2 text-brand-textMuted hover:text-brand-primary dark:text-slate-400 dark:hover:text-white rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" aria-label="Toggle theme">
-                    <span class="material-symbols-outlined block dark:hidden">dark_mode</span>
-                    <span class="material-symbols-outlined hidden dark:block">light_mode</span>
+            <div class="hidden lg:flex items-center space-x-4">
+                <!-- Theme Toggle -->
+                <button class="theme-toggle-btn w-10 h-10 flex items-center justify-center text-brand-textMuted hover:text-brand-primary dark:text-slate-400 dark:hover:text-white rounded-full hover:bg-slate-100 dark:hover:bg-white/5 transition-all duration-300">
+                    <span class="material-symbols-outlined text-[20px] block dark:hidden">dark_mode</span>
+                    <span class="material-symbols-outlined text-[20px] hidden dark:block">light_mode</span>
                 </button>
 
-                <a href="{{ route('project') }}" class="bg-brand-primary text-white hover:bg-brand-primaryDark px-5 py-2.5 rounded-xl text-xs font-bold shadow-premium hover:shadow-premiumHover transition-all hover:scale-[1.02] active:scale-95">
-                    Start a Project
+                <a href="{{ route('project') }}" class="relative group overflow-hidden bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary px-6 py-2.5 rounded-full text-xs font-black shadow-premium hover:shadow-premiumHover transition-all hover:scale-[1.05] active:scale-95">
+                    <span class="relative z-10">Start a Project</span>
+                    <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                 </a>
             </div>
 
-            <!-- Hamburger Button -->
-            <button @click="mobileOpen = !mobileOpen" class="lg:hidden p-2 text-brand-primary dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors" aria-label="Toggle Menu">
-                <span class="material-symbols-outlined text-[28px]" x-text="mobileOpen ? 'close' : 'menu'">menu</span>
+            <!-- Hamburger -->
+            <button @click="mobileOpen = !mobileOpen" class="lg:hidden w-10 h-10 flex items-center justify-center text-brand-primary dark:text-white hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-colors">
+                <span class="material-symbols-outlined text-[24px]" x-text="mobileOpen ? 'close' : 'menu'">menu</span>
             </button>
         </div>
 
-        <!-- Mobile Drawer Menu -->
+        <!-- Mobile Drawer -->
         <div x-show="mobileOpen"
-             x-transition:enter="transition ease-out duration-200"
-             x-transition:enter-start="opacity-0 -translate-y-4"
-             x-transition:enter-end="opacity-100 translate-y-0"
-             x-transition:leave="transition ease-in duration-150"
-             x-transition:leave-start="opacity-100 translate-y-0"
-             x-transition:leave-end="opacity-0 -translate-y-4"
-             class="lg:hidden w-full bg-white border-b border-brand-borderLight py-6 px-6 space-y-4"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 -translate-y-4 scale-95"
+             x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+             x-transition:leave-end="opacity-0 -translate-y-4 scale-95"
+             class="lg:hidden absolute left-4 right-4 mt-4 bg-white/95 dark:bg-brand-primaryDark/95 backdrop-blur-xl border border-brand-borderLight dark:border-white/10 rounded-[2rem] shadow-premiumHover p-8 space-y-6 z-50"
              style="display: none;">
-            <a href="{{ route('about') }}" class="block font-medium text-brand-textMuted hover:text-brand-primary transition-colors py-2 text-base @if(Request::routeIs('about')) text-brand-primary font-bold @endif">About</a>
-            <a href="{{ route('services') }}" class="block font-medium text-brand-textMuted hover:text-brand-primary transition-colors py-2 text-base @if(Request::routeIs('services')) text-brand-primary font-bold @endif">Services</a>
-
-            <!-- Mobile Industries Submenu -->
-            <div class="py-2 space-y-1">
-                <span class="block text-xs font-bold uppercase tracking-wider text-slate-400">Who We Help</span>
-                <a href="{{ route('industries.healthcare') }}" class="block font-medium text-brand-textMuted hover:text-brand-primary transition-colors py-1.5 pl-4 text-sm @if(Request::is('industries/healthcare')) text-brand-primary font-bold @endif">Healthcare</a>
-                <a href="{{ route('industries.fintech') }}" class="block font-medium text-brand-textMuted hover:text-brand-primary transition-colors py-1.5 pl-4 text-sm @if(Request::is('industries/fintech')) text-brand-primary font-bold @endif">Money &amp; Banking</a>
-                <a href="{{ route('industries.logistics') }}" class="block font-medium text-brand-textMuted hover:text-brand-primary transition-colors py-1.5 pl-4 text-sm @if(Request::is('industries/logistics')) text-brand-primary font-bold @endif">Shipping &amp; Delivery</a>
-                <a href="{{ route('industries.enterprise') }}" class="block font-medium text-brand-textMuted hover:text-brand-primary transition-colors py-1.5 pl-4 text-sm @if(Request::is('industries/enterprise')) text-brand-primary font-bold @endif">Large Companies</a>
+            <div class="grid gap-2">
+                <a href="{{ route('about') }}" class="text-2xl font-black text-brand-primary dark:text-white hover:text-brand-secondary transition-colors">About</a>
+                <a href="{{ route('services') }}" class="text-2xl font-black text-brand-primary dark:text-white hover:text-brand-secondary transition-colors">Services</a>
+                <a href="{{ route('blog') }}" class="text-2xl font-black text-brand-primary dark:text-white hover:text-brand-secondary transition-colors">Blog</a>
+                <a href="{{ route('contact') }}" class="text-2xl font-black text-brand-primary dark:text-white hover:text-brand-secondary transition-colors">Contact</a>
             </div>
-
-            <a href="{{ route('blog') }}" class="block font-medium text-brand-textMuted hover:text-brand-primary transition-colors py-2 text-base @if(Request::routeIs('blog') || Request::routeIs('blog.show')) text-brand-primary @endif">Blog</a>
-            <a href="{{ route('contact') }}" class="block font-medium text-brand-textMuted hover:text-brand-primary transition-colors py-2 text-base @if(Request::routeIs('contact')) text-brand-primary font-bold @endif">Contact</a>
-            <hr class="border-brand-borderLight">
-            <div class="flex items-center justify-between pt-2">
-                <!-- Theme Toggle Button -->
-                <button class="theme-toggle-btn p-2 text-brand-textMuted hover:text-brand-primary dark:text-slate-400 dark:hover:text-white rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" aria-label="Toggle theme">
-                    <span class="material-symbols-outlined block dark:hidden">dark_mode</span>
-                    <span class="material-symbols-outlined hidden dark:block">light_mode</span>
-                </button>
-
-                <a href="{{ route('project') }}" class="bg-brand-primary text-white px-5 py-2.5 rounded-xl text-xs font-bold shadow-premium">
+            
+            <hr class="border-brand-borderLight dark:border-white/5">
+            
+            <div class="flex flex-col gap-4">
+                <a href="{{ route('project') }}" class="w-full py-4 bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary rounded-2xl text-center font-black text-lg shadow-premium">
                     Start a Project
                 </a>
+                <button class="theme-toggle-btn w-full py-3 flex items-center justify-center gap-3 border border-brand-borderLight dark:border-white/10 rounded-2xl text-brand-textMuted dark:text-slate-400 font-bold">
+                    <span class="material-symbols-outlined block dark:hidden">dark_mode</span>
+                    <span class="material-symbols-outlined hidden dark:block">light_mode</span>
+                    <span x-text="document.documentElement.classList.contains('dark') ? 'Light Mode' : 'Dark Mode'"></span>
+                </button>
             </div>
         </div>
     </header>

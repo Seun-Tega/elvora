@@ -1,0 +1,10 @@
+.git
+.github
+node_modules
+vendor
+.env
+.env.production
+tests
+README.md
+Elvora Content.docx
+*.JPG
