@@ -3,7 +3,7 @@
 ARG PHP_VERSION=8.2
 ARG NODE_VERSION=18
 FROM ubuntu:22.04 as base
-LABEL fly_launch_runtime="laravel"
+LABEL fly_launch_runtime="elvora"
 
 # PHP_VERSION needs to be repeated here
 ARG PHP_VERSION
@@ -59,7 +59,7 @@ RUN composer install --optimize-autoloader --no-dev \
     && mkdir -p storage/logs \
     && php artisan optimize:clear \
     && chown -R www-data:www-data /var/www/html \
-    && echo "MAILTO=\"\"\n* * * * * www-data /usr/bin/php /var/www/html/artisan schedule:run" > /etc/cron.d/laravel \
+    && echo "MAILTO=\"\"\n* * * * * www-data /usr/bin/php /var/www/html/artisan schedule:run" > /etc/cron.d/elvora \
     && sed -i='' '/->withMiddleware(function (Middleware \$middleware)/a\
         \$middleware->trustProxies(at: "*");\
     ' bootstrap/app.php; \ 
