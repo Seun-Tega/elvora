@@ -36,7 +36,7 @@
                     <div class="space-y-2">
                         <label class="block text-xs font-bold text-slate-400 uppercase tracking-[0.15em]" for="email">Email Address</label>
                         <div class="relative group">
-                            <x-lucide-mail width="20" height="20" class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-brand-secondary transition-colors" />
+                            <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-brand-secondary transition-colors text-[20px]">mail</span>
                             <input class="auth-input w-full pl-11 pr-4 py-3 rounded-xl outline-none input-transition text-sm bg-slate-950/60 border border-white/10 text-white focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10" 
                                 id="email" 
                                 type="email" 
@@ -53,7 +53,7 @@
                     <div class="space-y-2">
                         <label class="block text-xs font-bold text-slate-400 uppercase tracking-[0.15em]" for="password">New Password</label>
                         <div class="relative group">
-                            <x-lucide-lock width="20" height="20" class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-brand-secondary transition-colors" />
+                            <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-brand-secondary transition-colors text-[20px]">lock_open</span>
                             <input class="auth-input w-full pl-11 pr-11 py-3 rounded-xl outline-none input-transition text-sm bg-slate-950/60 border border-white/10 text-white focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10" 
                                 id="password" 
                                 type="password" 
@@ -61,11 +61,10 @@
                                 placeholder="Min. 8 characters" 
                                 required 
                                 autocomplete="new-password" />
-                            <button class="togglePassword absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors p-1" 
+                            <button class="togglePassword material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors p-1" 
                                     type="button"
                                     aria-label="Toggle password visibility">
-                                <x-lucide-eye width="20" height="20" class="eye-icon" />
-                                <x-lucide-eye-off width="20" height="20" class="eye-off-icon hidden" />
+                                visibility
                             </button>
                         </div>
                         @if($errors->has('password'))
@@ -77,7 +76,7 @@
                     <div class="space-y-2">
                         <label class="block text-xs font-bold text-slate-400 uppercase tracking-[0.15em]" for="password_confirmation">Confirm Password</label>
                         <div class="relative group">
-                            <x-lucide-lock width="20" height="20" class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-brand-secondary transition-colors" />
+                            <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-brand-secondary transition-colors text-[20px]">lock</span>
                             <input class="auth-input w-full pl-11 pr-11 py-3 rounded-xl outline-none input-transition text-sm bg-slate-950/60 border border-white/10 text-white focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10" 
                                 id="password_confirmation" 
                                 type="password" 
@@ -85,11 +84,10 @@
                                 placeholder="Repeat password" 
                                 required 
                                 autocomplete="new-password" />
-                            <button class="togglePassword absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors p-1" 
+                            <button class="togglePassword material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors p-1" 
                                     type="button"
                                     aria-label="Toggle password visibility">
-                                <x-lucide-eye width="20" height="20" class="eye-icon" />
-                                <x-lucide-eye-off width="20" height="20" class="eye-off-icon hidden" />
+                                visibility
                             </button>
                         </div>
                     </div>
@@ -99,7 +97,7 @@
                             type="submit"
                             id="submitBtn">
                         <span>Reset Password</span>
-                        <x-lucide-lock width="18" height="18" class="transition-transform group-hover:translate-x-0.5" />
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-0.5 text-lg">lock_reset</span>
                     </button>
                 </form>
             </div>
@@ -134,17 +132,7 @@
                     const input = btn.previousElementSibling;
                     const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
                     input.setAttribute('type', type);
-                    
-                    const eyeIcon = btn.querySelector('.eye-icon');
-                    const eyeOffIcon = btn.querySelector('.eye-off-icon');
-
-                    if (type === 'password') {
-                        eyeIcon.classList.remove('hidden');
-                        eyeOffIcon.classList.add('hidden');
-                    } else {
-                        eyeIcon.classList.add('hidden');
-                        eyeOffIcon.classList.remove('hidden');
-                    }
+                    btn.textContent = type === 'password' ? 'visibility' : 'visibility_off';
                 });
             });
         });

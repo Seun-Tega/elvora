@@ -34,7 +34,7 @@
                 @if (session('status') == 'verification-link-sent')
                     <div class="mb-6 animate-in fade-in duration-500" role="alert">
                         <div class="flex items-start gap-3 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-emerald-400">
-                            <x-lucide-check-circle width="20" height="20" class="mt-0.5" />
+                            <span class="material-symbols-outlined text-[20px] mt-0.5">check_circle</span>
                             <span class="text-sm">A new verification link has been sent to the email address you provided.</span>
                         </div>
                     </div>
@@ -47,14 +47,14 @@
                                 type="submit"
                                 id="submitBtn">
                             <span>Resend Verification Email</span>
-                            <x-lucide-mail width="18" height="18" class="transition-transform group-hover:translate-x-0.5" />
+                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-0.5 text-lg">mail</span>
                         </button>
                     </form>
 
                     <form method="POST" action="{{ route('logout') }}" class="block">
                         @csrf
                         <button type="submit" class="w-full bg-transparent hover:bg-white/5 border border-white/10 text-slate-300 py-3 rounded-xl font-bold transition-all flex items-center justify-center gap-2">
-                            <x-lucide-log-out width="18" height="18" />
+                            <span class="material-symbols-outlined text-lg">logout</span>
                             <span>Sign Out</span>
                         </button>
                     </form>

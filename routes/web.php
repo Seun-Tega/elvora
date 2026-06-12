@@ -50,7 +50,7 @@ Route::get('/start-project', function () {
 
 
 Route::get('/dashboard', function () {
-    if (auth()->user()->hasAnyRole(['super_admin', 'superadmin', 'admin', 'content-manager', 'editor']) || auth()->user()->email === 'admin@elvora.com') {
+    if (auth()->user()->hasRole('admin') || auth()->user()->email === 'admin@elvora.com') {
         return redirect()->route('filament.admin.pages.dashboard');
     }
     return view('dashboard');

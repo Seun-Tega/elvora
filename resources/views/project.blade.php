@@ -1,28 +1,27 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', 'Start Project | Elvora Innovation')
 
 @section('content')
     <div class="min-h-[85vh] flex items-center bg-brand-surfaceLight dark:bg-brand-surfaceDark py-20 border-b border-brand-borderLight dark:border-white/10">
-        <div class="max-w-[1600px] w-full mx-auto px-4 grid lg:grid-cols-12 gap-16 relative z-10 w-full">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 grid lg:grid-cols-12 gap-16 relative z-10 w-full">
             <!-- Left Info column -->
             <div class="lg:col-span-5 space-y-6 flex flex-col justify-center">
                 <span class="text-brand-secondary font-bold text-xs uppercase tracking-widest block">Start Your Idea</span>
-                <h1 class="font-display font-extrabold text-fluid-3xl md:text-fluid-4xl text-brand-primary dark:text-white leading-tight">
+                <h1 class="font-display font-extrabold text-3xl md:text-4xl text-brand-primary dark:text-white leading-tight">
                     Ready to Bring Your Idea to Life?
                 </h1>
                 <p class="text-brand-textMuted dark:text-slate-400 text-sm leading-relaxed max-w-md">
                     Tell us about your project, goals, and timeline. Our team will review your request and schedule a talk to discuss the best way to make it a success.
                 </p>
                 <div class="pt-4 border-t border-brand-borderLight dark:border-white/10 space-y-2 text-xs text-brand-textMuted dark:text-slate-400">
-                    <p class="flex items-center gap-2"> We usually reply in less than 12 hours</p>
-                    <p class="flex items-center gap-2"> Your privacy and ideas are safe with us</p>
+                    <p class="flex items-center gap-2"><span class="material-symbols-outlined text-brand-secondary text-base">timer</span> We usually reply in less than 12 hours</p>
+                    <p class="flex items-center gap-2"><span class="material-symbols-outlined text-brand-secondary text-base">lock</span> Your privacy and ideas are safe with us</p>
                 </div>
             </div>
 
             <!-- Form Card column (Alpine.js State) -->
-            <div class="lg:col-span-7 overflow-x-auto">
-                <div x-data="{ 
+            <div x-data="{ 
                 step: 1, 
                 formData: {
                     name: '',
@@ -95,7 +94,7 @@
                         this.isSubmitting = false;
                     }
                 }
-            }" class="bg-white dark:bg-slate-900 border border-brand-borderLight dark:border-white/10 p-8 rounded-2xl shadow-premium relative min-h-[480px] flex flex-col justify-between">
+            }" class="lg:col-span-7 bg-white dark:bg-slate-900 border border-brand-borderLight dark:border-white/10 p-8 rounded-2xl shadow-premium relative min-h-[480px] flex flex-col justify-between">
                 
                 <!-- Progress Header -->
                 <div x-show="step < 4" class="mb-8 space-y-3">
@@ -193,7 +192,7 @@
                 <!-- Step 4 Layout (Success Screen) -->
                 <div x-show="step === 4" class="text-center py-8 space-y-6 flex-grow flex flex-col items-center justify-center" style="display: none;">
                     <div class="w-16 h-16 rounded-full bg-green-50 dark:bg-green-950/30 flex items-center justify-center text-green-500">
-                        <x-lucide-check-circle class="w-8 h-8" />
+                        <span class="material-symbols-outlined text-4xl">check_circle</span>
                     </div>
                     <div class="space-y-2">
                         <h3 class="font-display font-bold text-xl text-brand-primary dark:text-white">Sent Successfully</h3>
@@ -208,18 +207,18 @@
                 <!-- Navigation Controls -->
                 <div x-show="step < 4" class="flex justify-between items-center pt-8 mt-8 border-t border-brand-borderLight dark:border-white/10">
                     <button type="button" @click="prevStep()" x-show="step > 1" class="text-xs font-bold text-brand-textMuted hover:text-brand-primary transition-colors flex items-center gap-1">
-                        <x-lucide-arrow-left class="w-3 h-3" /> Back
+                        <span class="material-symbols-outlined text-sm">arrow_back</span> Back
                     </button>
                     <!-- Spacer -->
                     <span x-show="step === 1"></span>
 
                     <button type="button" @click="nextStep()" x-show="step < 3" class="bg-brand-primary text-white hover:bg-brand-primaryDark px-6 py-3 rounded-xl text-xs font-bold transition-all flex items-center gap-1">
-                        Continue <x-lucide-arrow-right class="w-3 h-3" />
+                        Continue <span class="material-symbols-outlined text-sm">arrow_forward</span>
                     </button>
 
                     <button type="button" @click="submitForm()" x-show="step === 3" :disabled="isSubmitting" class="bg-brand-primary text-white hover:bg-brand-primaryDark px-6 py-3 rounded-xl text-xs font-bold transition-all flex items-center gap-2">
                         <span x-text="isSubmitting ? 'Sending...' : 'Let\'s Build Together'">Let's Build Together</span>
-                        <x-lucide-send class="w-3 h-3" x-show="!isSubmitting" />
+                        <span class="material-symbols-outlined text-sm" x-show="!isSubmitting">handshake</span>
                     </button>
                 </div>
 

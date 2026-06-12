@@ -3,14 +3,14 @@
 namespace App\Filament\Resources\NewsletterSubscribers\Schemas;
 
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
+use Filament\Schemas\Schema;
 
 class NewsletterSubscriberForm
 {
-    public static function configure(Form $form): Form
+    public static function configure(Schema $schema): Schema
     {
-        return $form
-            ->schema([
+        return $schema
+            ->components([
                 TextInput::make('email')
                     ->label('Email address')
                     ->email()

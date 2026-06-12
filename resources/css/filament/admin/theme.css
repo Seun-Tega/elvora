@@ -1,15 +1,12 @@
 @import '../../../../vendor/filament/filament/resources/css/theme.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
 
-:root {
-    /* Brand Colors */
+@theme {
     --color-brand-primary: #003366;
     --color-brand-accent: #CC9933;
     
-    /* Elvora Navy Palette */
     --color-elvora-navy-50: #eef6ff;
     --color-elvora-navy-100: #d8ebff;
     --color-elvora-navy-200: #b5d7ff;
@@ -22,7 +19,6 @@
     --color-elvora-navy-900: #001c38;
     --color-elvora-navy-950: #061427;
     
-    /* Elvora Gold Palette */
     --color-elvora-gold-50: #fbf6e9;
     --color-elvora-gold-100: #f4e9c7;
     --color-elvora-gold-200: #e8d08c;
@@ -35,11 +31,11 @@
     --color-elvora-gold-900: #402602;
     --color-elvora-gold-950: #291600;
 
-    /* Shadows */
     --shadow-premium: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 3px 0 rgba(0, 0, 0, 0.03);
     --shadow-premium-hover: 0 10px 20px -5px rgba(0, 0, 0, 0.04), 0 3px 8px -1px rgba(0, 0, 0, 0.02);
+}
 
-    /* UI Surface Tokens */
+:root {
     --elvora-bg: #F8FAFC;
     --elvora-surface: #FFFFFF;
     --elvora-surface-muted: #F1F5F9;
@@ -51,15 +47,8 @@
     --elvora-radius: 0.375rem;
     --elvora-radius-lg: 0.5rem;
     --elvora-focus: 0 0 0 2px rgba(0, 51, 102, 0.12);
-    
-    /* Typography */
     --font-sans: 'Inter', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
-
-    /* Sidebar System Tokens */
-    --sidebar-width: 280px;
-    --sidebar-collapsed-width: 0px;
-    --sidebar-transition: 250ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .dark {
@@ -80,90 +69,10 @@ body {
     letter-spacing: -0.011em;
 }
 
-/* ============================================================
-   DESKTOP PUSH LAYOUT — Sidebar never overlays content
-   The sidebar stays sticky (in document flow). When collapsed,
-   its width animates to 0 so the main content fills the space.
-   ============================================================ */
-@media (min-width: 1024px) {
-
-    /* 1. Outer flex container — row direction (sidebar left, content right) */
-    .fi-layout {
-        display: flex !important;
-        flex-direction: row-reverse !important; /* Filament's original direction */
-        align-items: stretch !important;
-        min-height: 100dvh !important;
-    }
-
-    /* 2. Sidebar: ALWAYS sticky (in-flow), never fixed on desktop.
-          Width transitions between full and 0 for a true push effect. */
-    .fi-sidebar {
-        position: sticky !important;
-        top: 0 !important;
-        height: 100dvh !important;
-        align-self: flex-start !important;
-        flex-shrink: 0 !important;
-        width: var(--sidebar-width) !important;
-        overflow: hidden !important;
-        /* Animate width (push) instead of translate (overlay) */
-        transition: width var(--sidebar-transition) !important;
-        /* Override Alpine's display:none so the flex-item stays
-           in the flow and the content area can fill the freed space */
-        display: flex !important;
-        flex-direction: column !important;
-        /* Override Filament's translate-x classes on desktop */
-        transform: none !important;
-    }
-
-    /* 3. Collapsed state — width shrinks to 0, content fills vacated space */
-    .fi-sidebar:not(.fi-sidebar-open),
-    .fi-sidebar[style*="display: none"] {
-        width: 0 !important;
-        /* Keep element in flow but invisible */
-        opacity: 0 !important;
-        pointer-events: none !important;
-        overflow: hidden !important;
-    }
-
-    /* 4. When Alpine has toggled the open class, restore visibility */
-    .fi-sidebar.fi-sidebar-open {
-        width: var(--sidebar-width) !important;
-        opacity: 1 !important;
-        pointer-events: auto !important;
-    }
-
-    /* 5. Main content area: fill all remaining width naturally */
-    .fi-main-ctn {
-        flex: 1 1 0% !important;
-        min-width: 0 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        overflow: hidden !important;
-        transition: flex-basis var(--sidebar-transition) !important;
-    }
-
-    /* 6. Topbar padding — space for the custom desktop toggle button */
-    .fi-topbar nav {
-        padding-left: 3.5rem !important;
-        transition: padding-left var(--sidebar-transition) !important;
-    }
-
-    /* 7. Sidebar header logo indent when open */
-    .fi-sidebar.fi-sidebar-open .fi-sidebar-header > div:first-child {
-        margin-left: 2.75rem !important;
-    }
-
-    /* 8. Remove the backdrop overlay — not needed in a push layout */
-    .fi-sidebar-close-overlay {
-        display: none !important;
-    }
-}
-
-/* --- Sidebar Visual Styling --- */
+/* Premium Layout & Sidebar Overrides (Linear style) */
 .fi-sidebar {
     background-color: var(--elvora-surface) !important;
     border-right: 1px solid var(--elvora-border) !important;
-    box-shadow: 1px 0 0 0 var(--elvora-border) !important;
 }
 
 .fi-sidebar-header {
@@ -172,53 +81,6 @@ body {
     padding-bottom: 1.25rem !important;
 }
 
-/* --- Mobile/Tablet: Off-canvas drawer --- */
-@media (max-width: 1023px) {
-    .fi-sidebar {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        bottom: 0 !important;
-        z-index: 50 !important;
-        width: var(--sidebar-width) !important;
-        max-width: 85vw !important;
-        box-shadow: 4px 0 24px -4px rgba(0, 0, 0, 0.12),
-                    1px 0 0 0 var(--elvora-border) !important;
-        transition: transform var(--sidebar-transition) !important;
-    }
-
-    /* Hidden state: slide fully off-screen to the left */
-    .fi-sidebar[style*="display: none"],
-    .fi-sidebar[x-show="false"] {
-        transform: translateX(-100%) !important;
-        display: block !important; /* keep in DOM for transition */
-        pointer-events: none !important;
-        visibility: hidden !important;
-    }
-
-    /* Backdrop overlay with blur — shown only on mobile */
-    .fi-sidebar-close-overlay {
-        position: fixed !important;
-        inset: 0 !important;
-        z-index: 40 !important;
-        background-color: rgba(15, 23, 42, 0.3) !important;
-        backdrop-filter: blur(4px) !important;
-        -webkit-backdrop-filter: blur(4px) !important;
-        transition: opacity 200ms ease !important;
-        display: block !important;
-    }
-
-    .dark .fi-sidebar-close-overlay {
-        background-color: rgba(0, 0, 0, 0.5) !important;
-    }
-
-    /* On mobile: topbar should not have extra padding for the custom btn */
-    .fi-topbar nav {
-        padding-left: 1rem !important;
-    }
-}
-
-/* --- Sidebar Nav Groups --- */
 .fi-sidebar-group {
     margin-top: 0.75rem !important;
 }
@@ -260,7 +122,7 @@ body {
     color: var(--elvora-accent) !important;
 }
 
-/* Topbar Styling */
+/* Topbar Styling (Vercel style) */
 .fi-topbar {
     border-bottom: 1px solid var(--elvora-border) !important;
     backdrop-filter: blur(16px) saturate(180%) !important;
@@ -272,7 +134,7 @@ body {
     background-color: rgba(11, 15, 25, 0.8) !important;
 }
 
-/* Global Search */
+/* Search Box Customization (Vercel cmd palette style) */
 .fi-global-search-field {
     max-width: 28rem !important;
 }
@@ -297,7 +159,7 @@ body {
     border-color: var(--elvora-accent) !important;
 }
 
-/* Sections & Cards */
+/* Custom Card Layout Overrides (Stripe style) */
 .fi-section, .fi-card, .fi-wi-widget {
     background-color: var(--elvora-surface) !important;
     border: 1px solid var(--elvora-border) !important;
@@ -310,7 +172,7 @@ body {
     box-shadow: var(--shadow-premium-hover) !important;
 }
 
-/* Stats Overview Stat Cards */
+/* Stats Overview Section (High density premium Stripe cards) */
 .fi-wi-stats-overview {
     gap: 0.75rem !important;
 }
@@ -359,7 +221,7 @@ body {
     color: var(--elvora-muted) !important;
 }
 
-/* Tables Redesign */
+/* Tables Redesign (Dense data, clear hierarchy) */
 .fi-ta-header-cell {
     background-color: var(--elvora-surface-muted) !important;
     border-bottom: 1px solid var(--elvora-border) !important;
@@ -394,6 +256,7 @@ body {
     background-color: rgba(255, 255, 255, 0.02) !important;
 }
 
+/* Monospace alignment for table numbers / codes */
 .fi-ta-cell-numeric, .fi-ta-cell-datetime, .fi-ta-cell-id {
     font-family: var(--font-mono) !important;
     font-size: 0.78rem !important;
@@ -434,7 +297,7 @@ body {
     margin-top: 0.25rem !important;
 }
 
-/* Badges Redesign */
+/* Badges Redesign (Subtle bg tints + solid thin borders) */
 .fi-badge {
     border-radius: 9999px !important;
     font-size: 0.68rem !important;
@@ -501,29 +364,4 @@ body {
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter !important;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
     transition-duration: 200ms !important;
-}
-
-/* ── Sidebar Toggle Button Visibility ─────────────────────────
-   Single source of control: the custom topbar toggle button.
-   All other sidebar open/close buttons are suppressed.
-   ─────────────────────────────────────────────────────────── */
-
-/* Hide Filament's built-in sidebar header chevron buttons globally */
-.fi-sidebar-header button,
-.fi-topbar-open-sidebar-btn,
-.fi-topbar-close-sidebar-btn {
-    display: none !important;
-}
-
-/* On MOBILE/TABLET: restore Filament's topbar hamburger buttons,
-   and hide our custom fixed desktop toggle (it would overlap the nav) */
-@media (max-width: 1023px) {
-    .fi-topbar-open-sidebar-btn,
-    .fi-topbar-close-sidebar-btn {
-        display: flex !important;
-    }
-
-    .elvora-sidebar-toggle-desktop {
-        display: none !important;
-    }
 }

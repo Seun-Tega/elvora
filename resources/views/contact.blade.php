@@ -4,11 +4,11 @@
 
 @section('content')
     <div class="min-h-[85vh] flex items-center bg-brand-surfaceLight dark:bg-brand-surfaceDark py-20 border-b border-brand-borderLight dark:border-white/10">
-        <div class="max-w-[1600px] w-full mx-auto px-4 grid lg:grid-cols-12 gap-16 relative z-10 w-full">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 grid lg:grid-cols-12 gap-16 relative z-10 w-full">
             <!-- Left Info column -->
             <div class="lg:col-span-5 space-y-6 flex flex-col justify-center">
                 <span class="text-brand-secondary font-bold text-xs uppercase tracking-widest block">Get In Touch</span>
-                <h1 class="font-display font-extrabold text-fluid-3xl md:text-fluid-4xl text-brand-primary dark:text-white leading-tight">
+                <h1 class="font-display font-extrabold text-3xl md:text-4xl text-brand-primary dark:text-white leading-tight">
                     Let’s Build Something Great Together
                 </h1>
                 <p class="text-brand-textMuted dark:text-slate-400 text-sm leading-relaxed max-w-md">
@@ -17,7 +17,7 @@
                 
                 <div class="space-y-6 pt-6 border-t border-brand-borderLight dark:border-white/10 text-xs font-semibold text-brand-textMuted dark:text-slate-400">
                     <div class="flex items-center gap-3">
-                        <x-lucide-mail class="w-6 h-6 text-brand-primary dark:text-brand-secondary" />
+                        <span class="material-symbols-outlined text-brand-primary dark:text-brand-secondary">mail</span>
                         <div>
                             <p class="text-[9px] uppercase font-bold text-slate-400">Email Address</p>
                             <a href="mailto:hello@elvora.com" class="text-brand-primary dark:text-white hover:underline text-sm font-bold mt-0.5 block">hello@elvora.com</a>
@@ -25,7 +25,7 @@
                     </div>
                     
                     <div class="flex items-center gap-3">
-                        <x-lucide-message-square class="w-6 h-6 text-brand-primary dark:text-brand-secondary" />
+                        <span class="material-symbols-outlined text-brand-primary dark:text-brand-secondary">forum</span>
                         <div>
                             <p class="text-[9px] uppercase font-bold text-slate-400">WhatsApp Hotline</p>
                             <a href="https://wa.me/2348123456789" target="_blank" class="text-brand-primary dark:text-white hover:underline text-sm font-bold mt-0.5 block">+234 812 345 6789</a>
@@ -48,8 +48,7 @@
             </div>
 
             <!-- Form Card column -->
-            <div class="lg:col-span-7 overflow-x-auto">
-                <div x-data="{ 
+            <div x-data="{ 
                 formData: {
                     name: '',
                     email: '',
@@ -99,7 +98,7 @@
                         this.isSubmitting = false;
                     }
                 }
-            }" class="bg-white dark:bg-slate-900 border border-brand-borderLight dark:border-white/10 p-8 rounded-2xl shadow-premium">
+            }" class="lg:col-span-7 bg-white dark:bg-slate-900 border border-brand-borderLight dark:border-white/10 p-8 rounded-2xl shadow-premium">
                 
                 <h3 class="font-display font-bold text-lg text-brand-primary dark:text-white mb-6">Tell us about your project and we will get back to you.</h3>
 
@@ -134,10 +133,9 @@
 
                     <button type="submit" :disabled="isSubmitting" class="w-full bg-brand-primary text-white hover:bg-brand-primaryDark py-3.5 rounded-xl font-bold flex items-center justify-center space-x-2 transition-all active:scale-95 shadow-sm">
                         <span x-text="isSubmitting ? 'Sending...' : 'Send Message'">Send Message</span>
-                        <x-lucide-send class="w-4 h-4" x-show="!isSubmitting" />
+                        <span class="material-symbols-outlined text-sm" x-show="!isSubmitting">send</span>
                     </button>
                 </form>
-                </div>
             </div>
         </div>
     </div>

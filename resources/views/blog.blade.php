@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', 'Journal & Insights | Elvora Innovations')
 
@@ -7,7 +7,7 @@
     <!--          MAIN JOURNAL WRAPPER              -->
     <!-- ========================================== -->
     <div class="bg-white dark:bg-slate-950 py-16 border-b border-slate-100 dark:border-white/5">
-        <div class="max-w-[1600px] w-full mx-auto px-4">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
             <div class="grid lg:grid-cols-12 gap-16 items-start">
                 
                 <!-- ========================================== -->
@@ -17,7 +17,7 @@
                     <!-- Title & description -->
                     <div class="space-y-3">
                         <span class="text-brand-secondary font-mono text-[10px] uppercase tracking-[0.25em] block">Publications</span>
-                        <h1 class="font-display font-black text-fluid-3xl md:text-fluid-4xl tracking-tight text-brand-primary dark:text-white leading-tight">
+                        <h1 class="font-display font-black text-3xl md:text-4xl tracking-tight text-brand-primary dark:text-white leading-tight">
                             The Journal
                         </h1>
                         <p class="text-slate-400 dark:text-slate-500 text-xs leading-relaxed max-w-sm">
@@ -30,7 +30,7 @@
                         @if(request('category'))
                             <input type="hidden" name="category" value="{{ request('category') }}">
                         @endif
-                        
+                        <span class="material-symbols-outlined text-slate-400 group-focus-within:text-brand-secondary transition-colors text-lg mr-2 select-none">search</span>
                         <input name="search" value="{{ request('search') }}" class="bg-transparent border-none focus:ring-0 text-xs w-full placeholder:text-slate-400 text-brand-primary dark:text-white outline-none p-0" placeholder="Search publications..." type="text"/>
                     </form>
 
@@ -163,7 +163,7 @@
                         <!-- Clean Empty State -->
                         <div class="text-center py-20 space-y-4 max-w-sm mx-auto">
                             <div class="w-12 h-12 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/5 rounded-2xl flex items-center justify-center text-slate-400 mx-auto">
-                                
+                                <span class="material-symbols-outlined text-2xl">search_off</span>
                             </div>
                             <div>
                                 <h4 class="font-display font-bold text-sm text-brand-primary dark:text-white">No Publications Found</h4>

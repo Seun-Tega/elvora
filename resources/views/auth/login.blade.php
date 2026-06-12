@@ -36,8 +36,8 @@
                     <div class="space-y-2">
                         <label class="block text-xs font-bold text-slate-400 uppercase tracking-[0.15em]" for="email">Email Address</label>
                         <div class="relative group">
-                            <x-lucide-mail width="20" height="20" class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-brand-secondary transition-colors" />
-                            <input class="auth-input w-full pl-11 pr-4 py-3 rounded-xl outline-none input-transition text-sm bg-slate-955/60 border border-white/10 text-white focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10" 
+                            <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-brand-secondary transition-colors text-[20px]">mail</span>
+                            <input class="auth-input w-full pl-11 pr-4 py-3 rounded-xl outline-none input-transition text-sm bg-slate-950/60 border border-white/10 text-white focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10" 
                                 id="email" 
                                 type="email" 
                                 name="email" 
@@ -62,7 +62,7 @@
                             @endif
                         </div>
                         <div class="relative group">
-                            <x-lucide-lock width="20" height="20" class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-brand-secondary transition-colors" />
+                            <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-brand-secondary transition-colors text-[20px]">lock</span>
                             <input class="auth-input w-full pl-11 pr-11 py-3 rounded-xl outline-none input-transition text-sm bg-slate-950/60 border border-white/10 text-white focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10" 
                                 id="password" 
                                 type="password" 
@@ -70,12 +70,11 @@
                                 placeholder="••••••••" 
                                 required 
                                 autocomplete="current-password" />
-                            <button class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors p-1" 
+                            <button class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors p-1" 
                                     type="button" 
                                     id="togglePassword"
                                     aria-label="Toggle password visibility">
-                                <x-lucide-eye width="20" height="20" class="eye-icon" />
-                                <x-lucide-eye-off width="20" height="20" class="eye-off-icon hidden" />
+                                visibility
                             </button>
                         </div>
                         @if($errors->has('password'))
@@ -99,7 +98,7 @@
                             type="submit"
                             id="submitBtn">
                         <span>Sign In</span>
-                    
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1 text-lg" data-weight="fill">arrow_forward</span>
                     </button>
                 </form>
 
@@ -108,7 +107,7 @@
                     <p class="text-xs text-slate-400">New to Elvora Innovation?</p>
                     <a class="flex items-center gap-1 text-xs font-bold text-white hover:text-brand-secondary transition-all group tracking-wider" href="{{ route('register') }}">
                         <span>Create Account</span>
-                        <x-lucide-arrow-right width="14" height="14" class="group-hover:translate-x-0.5 transition-transform" />
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
                     </a>
                 </div>
             </div>
@@ -116,12 +115,12 @@
             <!-- Trust Indicator / SSL Badge -->
             <div class="flex items-center justify-center gap-6 text-slate-500 text-xs font-medium">
                 <span class="flex items-center gap-1">
-                    <x-lucide-lock width="16" height="16" />
+                    <span class="material-symbols-outlined text-base">lock</span>
                     Secure SSL Encryption
                 </span>
                 <span class="w-1.5 h-1.5 rounded-full bg-slate-700"></span>
                 <span class="flex items-center gap-1">
-                    <x-lucide-shield-check width="16" height="16" />
+                    <span class="material-symbols-outlined text-base">verified_user</span>
                     Authorized Gateway
                 </span>
             </div>
@@ -154,20 +153,10 @@
 
             // Password Visibility Toggle
             if (togglePass && passInput) {
-                const eyeIcon = togglePass.querySelector('.eye-icon');
-                const eyeOffIcon = togglePass.querySelector('.eye-off-icon');
-
                 togglePass.addEventListener('click', () => {
                     const type = passInput.getAttribute('type') === 'password' ? 'text' : 'password';
                     passInput.setAttribute('type', type);
-                    
-                    if (type === 'password') {
-                        eyeIcon.classList.remove('hidden');
-                        eyeOffIcon.classList.add('hidden');
-                    } else {
-                        eyeIcon.classList.add('hidden');
-                        eyeOffIcon.classList.remove('hidden');
-                    }
+                    togglePass.textContent = type === 'password' ? 'visibility' : 'visibility_off';
                 });
             }
         });

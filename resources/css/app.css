@@ -1,6 +1,82 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+
+@theme {
+    /* Brand Primary Colors */
+    --color-brand-primary: #003366;
+    --color-brand-primaryDark: #001F3D;
+    
+    /* Brand Secondary Colors */
+    --color-brand-secondary: #CC9933;
+    --color-brand-secondaryDark: #99701F;
+    
+    /* Brand Semantic Surfaces */
+    --color-brand-bg: #FFFFFF;
+    --color-brand-surfaceLight: #F8FAFC;
+    --color-brand-surfaceDark: #0F172A;
+    --color-brand-borderLight: #E2E8F0;
+    
+    /* Brand Typography */
+    --color-brand-textDark: #0F172A;
+    --color-brand-textMuted: #475569;
+
+    /* Font Families */
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Outfit', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Semantic Aliases */
+    --color-brand-bg-light: #FAFAFA;
+    --color-brand-bg-dark: #000000;
+    --color-brand-text-primary: #0F172A;
+    --color-brand-text-dark: #F8FAFC;
+    --color-brand-surface-light: #FFFFFF;
+    --color-brand-surface-dark: #0A0A0A;
+    --color-brand-border-light: #E2E8F0;
+    --color-brand-border-dark: #1e293b;
+
+    /* Material Design 3 unified tokens */
+    --color-surface: #f8f9ff;
+    --color-on-surface: #0b1c30;
+    --color-surface-variant: #d3e4fe;
+    --color-on-surface-variant: #43474f;
+    --color-outline-variant: #c3c6d1;
+    --color-primary-container: #003366;
+    --color-secondary-container: #fec65c;
+    --color-on-secondary-container: #745200;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #eff4ff;
+
+    /* Custom Shadow Tokens */
+    --shadow-premium: 0 10px 30px -10px rgba(0, 51, 102, 0.08), 0 1px 3px 0 rgba(0, 0, 0, 0.02);
+    --shadow-premiumHover: 0 20px 40px -15px rgba(0, 51, 102, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.03);
+    --shadow-dark: 0 10px 30px -10px rgba(0, 0, 0, 0.6), 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 20px rgba(204, 153, 51, 0.4);
+
+    /* Keyframes */
+    @keyframes gradient-x {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+    }
+    @keyframes float-slow {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+    @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+    @keyframes scan {
+        0% { transform: translateY(-100%); opacity: 0; }
+        50% { opacity: 0.5; }
+        100% { transform: translateY(100%); opacity: 0; }
+    }
+
+    /* Animation Utilities */
+    --animate-gradient-x: gradient-x 3s ease infinite;
+    --animate-float-slow: float-slow 4s ease-in-out infinite;
+    --animate-scan: scan 4s linear infinite;
+}
 
 @layer base {
     html {
@@ -86,8 +162,7 @@
     }
 
     .scanner-line {
-        @apply h-10;
-        animation: scan 4s linear infinite;
+        @apply h-10 animate-scan;
         background: linear-gradient(to bottom, transparent, rgba(204, 153, 51, 0.1), transparent);
     }
 
@@ -106,10 +181,4 @@
     .reveal-visible {
         @apply opacity-100 translate-y-0;
     }
-}
-
-@keyframes scan {
-    0% { transform: translateY(-100%); opacity: 0; }
-    50% { opacity: 0.5; }
-    100% { transform: translateY(100%); opacity: 0; }
 }

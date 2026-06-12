@@ -7,7 +7,7 @@ use Filament\Widgets\ChartWidget;
 
 class LeadFunnelChart extends ChartWidget
 {
-    protected static ?string $heading = 'Lead Funnel Breakdown';
+    protected ?string $heading = 'Lead Funnel Breakdown';
     
     protected static ?int $sort = 1;
 

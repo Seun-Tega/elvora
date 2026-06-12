@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', 'FinTech Solutions | Elvora Innovation')
 
@@ -27,7 +27,7 @@
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 grid md:grid-cols-2 gap-12 items-center">
             <div class="space-y-6">
                 <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-brand-secondary text-brand-secondary font-display font-bold uppercase tracking-wider text-[10px]">
-                    <x-lucide-landmark class="w-5 h-5" />
+                    <span class="material-symbols-outlined text-[18px]">account_balance</span>
                     <span>FINANCIAL TECHNOLOGY SYSTEMS</span>
                 </div>
                 <h1 class="font-display text-4xl md:text-5xl font-extrabold leading-tight">Global Financial Systems for the Next Era</h1>
@@ -83,13 +83,13 @@
                 <div class="md:col-span-8 group relative overflow-hidden rounded-2xl border border-brand-borderLight dark:border-white/10 bg-brand-surfaceLight dark:bg-slate-900/40 p-8 transition-all hover:shadow-premium">
                     <div class="flex flex-col h-full justify-between relative z-10 space-y-8">
                         <div class="space-y-4 max-w-md">
-                            <x-lucide-tablet class="w-10 h-10 text-brand-secondary" />
+                            <span class="material-symbols-outlined text-brand-secondary text-4xl">digital_wellbeing</span>
                             <h3 class="font-display font-bold text-xl text-brand-primary dark:text-white">Unified Banking Platforms</h3>
                             <p class="text-brand-textMuted dark:text-slate-400 text-sm leading-relaxed">Complete digital finance infrastructure featuring custom ledger systems, user verification flows, and fast mobile designs.</p>
                         </div>
                         <a href="{{ route('project') }}" class="flex items-center gap-2 text-brand-primary dark:text-brand-secondary font-bold text-sm">
                             <span>Explore Banking Tools</span>
-                            <x-lucide-arrow-right class="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                            <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
                         </a>
                     </div>
                     <img class="absolute right-0 bottom-0 w-1/2 h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none" src="https://images.unsplash.com/photo-1563013544-824ae1d704d3?q=80&w=800&auto=format&fit=crop"/>
@@ -97,25 +97,25 @@
                 <!-- Payment Rails -->
                 <div class="md:col-span-4 rounded-2xl border border-brand-primaryDark bg-brand-primary p-8 flex flex-col justify-between text-white hover:shadow-premium transition-all">
                     <div class="space-y-4">
-                        <x-lucide-arrow-right-left class="w-10 h-10 text-brand-secondary" />
+                        <span class="material-symbols-outlined text-brand-secondary text-4xl">sync_alt</span>
                         <h3 class="font-display font-bold text-xl">Global Transaction Pathways</h3>
                         <p class="text-blue-100 text-sm leading-relaxed">Unified billing routes supporting instant cross-border transfers and multiple currencies.</p>
                     </div>
                     <div class="mt-8 flex items-center justify-between text-xs text-brand-secondary font-bold">
                         <span>OPTIMIZED TRANSFERS</span>
-                        <x-lucide-bolt class="w-4 h-4" />
+                        <span class="material-symbols-outlined text-base">offline_bolt</span>
                     </div>
                 </div>
                 <!-- Tokenization -->
                 <div class="md:col-span-4 rounded-2xl border border-brand-borderLight dark:border-white/10 bg-white dark:bg-slate-900/40 p-8 flex flex-col justify-between hover:shadow-premium transition-all">
                     <div class="space-y-4">
-                        <x-lucide-dollar-sign class="w-10 h-10 text-brand-primary dark:text-brand-secondary" />
+                        <span class="material-symbols-outlined text-brand-primary dark:text-brand-secondary text-4xl">token</span>
                         <h3 class="font-display font-bold text-xl text-brand-primary dark:text-white">Secure Digital Registers</h3>
                         <p class="text-brand-textMuted dark:text-slate-400 text-sm leading-relaxed">Protocols to log real estate, physical assets, and private funds onto unified, audited records.</p>
                     </div>
                     <a href="{{ route('project') }}" class="mt-8 text-brand-primary dark:text-brand-secondary font-bold text-xs flex items-center gap-1 hover:underline">
                         <span>Scope Integration</span>
-                        <x-lucide-arrow-right class="w-4 h-4" />
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
                     </a>
                 </div>
                 <!-- Innovation Lab -->
@@ -126,8 +126,8 @@
                             <h3 class="font-display font-bold text-xl">FinTech System Lab</h3>
                             <p class="text-brand-textMuted dark:text-slate-400 text-sm leading-relaxed">Where we structure new options. From smart portfolio calculators to identity verification panels.</p>
                             <ul class="space-y-2 pt-2 text-xs text-brand-textMuted dark:text-slate-400 font-medium">
-                                <li class="flex items-center space-x-2"><x-lucide-check-circle class="w-4 h-4 text-brand-primary dark:text-brand-secondary" /> <span>Smart Risk Assessment Tools</span></li>
-                                <li class="flex items-center space-x-2"><x-lucide-check-circle class="w-4 h-4 text-brand-primary dark:text-brand-secondary" /> <span>Secure Data Protection Steps</span></li>
+                                <li class="flex items-center space-x-2"><span class="material-symbols-outlined text-brand-primary dark:text-brand-secondary text-sm">check_circle</span> <span>Smart Risk Assessment Tools</span></li>
+                                <li class="flex items-center space-x-2"><span class="material-symbols-outlined text-brand-primary dark:text-brand-secondary text-sm">check_circle</span> <span>Secure Data Protection Steps</span></li>
                             </ul>
                         </div>
                         <div class="relative h-full hidden md:block">
@@ -165,7 +165,7 @@
                     <div class="relative bg-white dark:bg-slate-900 p-6 rounded-2xl border border-brand-borderLight dark:border-white/10 shadow-premium space-y-6">
                         <div class="flex items-center space-x-3 pb-4 border-b border-brand-borderLight dark:border-white/10">
                             <div class="w-10 h-10 bg-brand-primary dark:bg-slate-950 rounded-xl flex items-center justify-center text-white dark:text-brand-secondary">
-                                <x-lucide-shield-alert class="w-5 h-5" />
+                                <span class="material-symbols-outlined">security</span>
                             </div>
                             <div>
                                 <h4 class="font-display font-bold text-sm text-brand-primary dark:text-white">Activity Overview</h4>

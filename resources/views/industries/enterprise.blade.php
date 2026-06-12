@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', 'Enterprise & Public Sector | Elvora Innovation')
 
@@ -22,7 +22,7 @@
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-12 items-center">
             <div class="space-y-6">
                 <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-slate-100 dark:bg-slate-900 text-brand-primary dark:text-brand-secondary border border-slate-200 dark:border-white/10 font-display font-bold uppercase tracking-wider text-[10px]">
-                    <x-lucide-scale class="w-5 h-5" />
+                    <span class="material-symbols-outlined text-[18px]">gavel</span>
                     <span>ENTERPRISE SYSTEMS</span>
                 </div>
                 <h1 class="font-display text-4xl md:text-5xl font-extrabold leading-tight text-brand-primary dark:text-white">Secure, Resilient &amp; Sovereign Core Systems</h1>
@@ -43,7 +43,7 @@
                 <!-- Floater -->
                 <div class="absolute -bottom-4 -left-4 glass-card p-4 rounded-xl shadow-premium z-20 flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-full bg-brand-secondary/15 flex items-center justify-center">
-                        <x-lucide-trophy class="w-5 h-5 text-brand-secondary" />
+                        <span class="material-symbols-outlined text-brand-secondary">military_tech</span>
                     </div>
                     <div>
                         <p class="text-[9px] font-bold uppercase tracking-wider text-brand-textMuted dark:text-slate-400">Cloud Status</p>
@@ -66,7 +66,7 @@
                 <!-- Legacy Systems Modernization -->
                 <div class="md:col-span-8 bg-brand-surfaceLight dark:bg-slate-900/40 p-8 rounded-2xl border border-brand-borderLight dark:border-white/10 hover:shadow-premium transition-all group overflow-hidden relative">
                     <div class="relative z-10 space-y-4">
-                        <x-lucide-wrench class="w-10 h-10 text-brand-secondary mb-2 group-hover:scale-110 transition-transform" />
+                        <span class="material-symbols-outlined text-[40px] text-brand-secondary mb-2 group-hover:scale-110 transition-transform">construction</span>
                         <h3 class="font-display font-bold text-xl text-brand-primary dark:text-white">Core Database Modernization</h3>
                         <p class="text-brand-textMuted dark:text-slate-400 text-sm leading-relaxed max-w-lg">
                             Systematic update of legacy data setups. We migrate transactional systems to fast, scalable services, reducing overall system maintenance costs.
@@ -77,7 +77,7 @@
                 <!-- Sovereign Cloud -->
                 <div class="md:col-span-4 bg-brand-primary p-8 rounded-2xl border border-brand-primaryDark hover:shadow-premium transition-all relative group flex flex-col justify-between">
                     <div class="space-y-4">
-                        <x-lucide-cloud class="w-10 h-10 text-brand-secondary mb-2" />
+                        <span class="material-symbols-outlined text-[40px] text-brand-secondary mb-2">cloud_queue</span>
                         <h3 class="font-display font-bold text-xl text-white">Sovereign Hosting</h3>
                         <p class="text-blue-100 text-sm leading-relaxed">
                             Ensuring data privacy requirements and isolated host configurations are met for institutional workloads.
@@ -85,13 +85,13 @@
                     </div>
                     <div class="mt-8 flex items-center text-brand-secondary font-bold text-xs space-x-1 group-hover:translate-x-2 transition-transform">
                         <span>Explore Hosting Solutions</span>
-                        <x-lucide-arrow-right class="w-4 h-4" />
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
                     </div>
                 </div>
                 <!-- Private Network Access -->
                 <div class="md:col-span-5 bg-brand-surfaceLight dark:bg-slate-900/40 p-8 rounded-2xl border border-brand-borderLight dark:border-white/10 hover:shadow-premium transition-all space-y-4">
                     <div class="w-12 h-12 bg-white dark:bg-slate-950 rounded-full flex items-center justify-center border border-brand-borderLight dark:border-white/10">
-                        <x-lucide-lock class="w-5 h-5 text-brand-primary dark:text-brand-secondary" />
+                        <span class="material-symbols-outlined text-brand-primary dark:text-brand-secondary">vpn_lock</span>
                     </div>
                     <h3 class="font-display font-bold text-xl text-brand-primary dark:text-white">Secure Network Access</h3>
                     <p class="text-brand-textMuted dark:text-slate-400 text-sm leading-relaxed">
@@ -107,7 +107,7 @@
                                 Multi-region automated backup mechanisms, ensuring systems remain accessible and functional at all times.
                             </p>
                         </div>
-                        <x-lucide-maximize class="w-12 h-12 text-brand-primary/20 dark:text-brand-secondary/20 group-hover:text-brand-primary dark:group-hover:text-brand-secondary transition-colors" />
+                        <span class="material-symbols-outlined text-[48px] text-brand-primary/20 dark:text-brand-secondary/20 group-hover:text-brand-primary dark:group-hover:text-brand-secondary transition-colors">hub</span>
                     </div>
                     <div class="mt-8 grid grid-cols-3 gap-4">
                         <div class="text-center p-3 bg-white dark:bg-slate-950 rounded-xl border border-brand-borderLight dark:border-white/10 shadow-sm">
@@ -133,7 +133,7 @@
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 grid lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-7 space-y-6">
                 <div class="text-brand-secondary font-bold text-xs uppercase tracking-widest flex items-center">
-                    <x-lucide-badge-check class="w-4 h-4 mr-1" /> SOVEREIGN COMPLIANCE
+                    <span class="material-symbols-outlined mr-1 text-base">verified</span> SOVEREIGN COMPLIANCE
                 </div>
                 <h2 class="font-display font-extrabold text-3xl md:text-4xl text-brand-primary dark:text-white leading-tight">High Security Level Standards</h2>
                 <p class="text-brand-textMuted dark:text-slate-400 text-lg leading-relaxed">
@@ -143,11 +143,11 @@
             
             <div class="lg:col-span-5 grid grid-cols-2 gap-4">
                 <div class="bg-white dark:bg-slate-900/60 p-6 rounded-xl border border-brand-borderLight dark:border-white/10 shadow-sm flex flex-col items-center text-center">
-                    <x-lucide-scale class="w-12 h-12 text-brand-secondary mb-3" />
+                    <span class="material-symbols-outlined text-[48px] text-brand-secondary mb-3">gavel</span>
                     <p class="font-display font-bold text-xs text-brand-primary dark:text-white">Corporate Ready</p>
                 </div>
                 <div class="bg-white dark:bg-slate-900/60 p-6 rounded-xl border border-brand-borderLight dark:border-white/10 shadow-sm flex flex-col items-center text-center">
-                    <x-lucide-shield-alert class="w-12 h-12 text-brand-secondary mb-3" />
+                    <span class="material-symbols-outlined text-[48px] text-brand-secondary mb-3">security</span>
                     <p class="font-display font-bold text-xs text-brand-primary dark:text-white">Fully Verified</p>
                 </div>
             </div>
