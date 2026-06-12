@@ -1,18 +1,69 @@
 #!/usr/bin/env php
 <?php
 
-use Illuminate\Foundation\Application;
-use Symfony\Component\Console\Input\ArgvInput;
-
 define('LARAVEL_START', microtime(true));
 
-// Register the Composer autoloader...
+/*
+|--------------------------------------------------------------------------
+| Check If The Application Is Under Maintenance
+|--------------------------------------------------------------------------
+|
+| If the application is in maintenance / demo mode via the "down" command
+| we will load this file so that any pre-rendered content can be shown
+| instead of starting the framework, which could cause an error.
+|
+*/
+
+if (file_exists(__DIR__.'/storage/framework/maintenance.php')) {
+    require __DIR__.'/storage/framework/maintenance.php';
+}
+
+/*
+|--------------------------------------------------------------------------
+| Register The Auto Loader
+|--------------------------------------------------------------------------
+|
+| Composer provides a convenient, automatically generated class loader
+| for our application. We just need to utilize it! We'll require it
+| into the script here so that we do not have to worry about the
+| loading of our classes later on. It feels great to relax.
+|
+*/
+
 require __DIR__.'/vendor/autoload.php';
 
-// Bootstrap Elvora and handle the command...
-/** @var Application $app */
+/*
+|--------------------------------------------------------------------------
+| Run The Artisan Application
+|--------------------------------------------------------------------------
+|
+| When we run the artisan command, this bundle's kernel will handle the
+| incoming command and send the response back to the terminal.
+|
+| We will get the application instance and then run the artisan console
+| application.
+|
+*/
+
 $app = require_once __DIR__.'/bootstrap/app.php';
 
-$status = $app->handleCommand(new ArgvInput);
+$kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
+
+$status = $kernel->handle(
+    $input = new Symfony\Component\Console\Input\ArgvInput,
+    new Symfony\Component\Console\Output\ConsoleOutput
+);
+
+/*
+|--------------------------------------------------------------------------
+| Shutdown The Application
+|--------------------------------------------------------------------------
+|
+| Once Artisan has finished running, we will fire off the "terminate"
+| method on the kernel and then exit the script with the status code.
+|
+*/
+
+$kernel->terminate($input, $status);
 
 exit($status);

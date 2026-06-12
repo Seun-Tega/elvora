@@ -4,22 +4,22 @@ namespace App\Filament\Resources\Blogs\Schemas;
 
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
-use Filament\Schemas\Components\Grid;
-use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
-
+use Filament\Forms\Form;
 use Illuminate\Support\Str;
 
 class BlogForm
 {
-    public static function configure(Schema $schema): Schema
+    public static function configure(Form $form): Form
     {
-        return $schema
-            ->components([
+        return $form
+            ->schema([
                 // Publishing controls at the top
                 Section::make('Publishing')
                     ->icon('heroicon-m-megaphone')
@@ -67,7 +67,7 @@ class BlogForm
                             ->default(null)
                             ->rows(2)
                             ->columnSpanFull(),
-                        \Filament\Forms\Components\RichEditor::make('content')
+                        RichEditor::make('content')
                             ->required()
                             ->columnSpanFull(),
                     ]),

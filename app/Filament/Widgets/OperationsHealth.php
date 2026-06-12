@@ -9,7 +9,7 @@ use Filament\Widgets\Widget;
 
 class OperationsHealth extends Widget
 {
-    protected string $view = 'filament.widgets.operations-health';
+    protected static string $view = 'filament.widgets.operations-health';
 
     protected static ?int $sort = 5;
 

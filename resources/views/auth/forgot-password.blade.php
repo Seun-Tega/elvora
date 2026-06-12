@@ -30,7 +30,7 @@
                 @if (session('status'))
                     <div class="mb-6 animate-in fade-in duration-500" role="alert">
                         <div class="flex items-start gap-3 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-emerald-400">
-                            <span class="material-symbols-outlined text-[20px] mt-0.5">check_circle</span>
+                            <x-lucide-check-circle width="20" height="20" class="mt-0.5" />
                             <span class="text-sm">{{ session('status') }}</span>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                     <div class="space-y-2">
                         <label class="block text-xs font-bold text-slate-400 uppercase tracking-[0.15em]" for="email">Email Address</label>
                         <div class="relative group">
-                            <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-brand-secondary transition-colors text-[20px]">mail</span>
+                            <x-lucide-mail width="20" height="20" class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-brand-secondary transition-colors" />
                             <input class="auth-input w-full pl-11 pr-4 py-3 rounded-xl outline-none input-transition text-sm bg-slate-950/60 border border-white/10 text-white focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10" 
                                 id="email" 
                                 type="email" 
@@ -62,14 +62,14 @@
                             type="submit"
                             id="submitBtn">
                         <span>Send Reset Link</span>
-                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-0.5 text-lg">send</span>
+                        <x-lucide-send width="18" height="18" class="transition-transform group-hover:translate-x-0.5" />
                     </button>
                 </form>
 
                 <!-- Navigation Route -->
                 <div class="mt-6 pt-6 border-t border-white/5 flex items-center justify-center">
                     <a class="flex items-center gap-1.5 text-xs font-bold text-white hover:text-brand-secondary transition-all group tracking-wider" href="{{ route('login') }}">
-                        <span class="material-symbols-outlined text-sm group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+                        <x-lucide-arrow-left width="14" height="14" class="group-hover:-translate-x-0.5 transition-transform" />
                         <span>Back to Sign In</span>
                     </a>
                 </div>
@@ -78,7 +78,7 @@
             <!-- Trust Indicator / SSL Badge -->
             <div class="flex items-center justify-center gap-6 text-slate-500 text-xs font-medium">
                 <span class="flex items-center gap-1">
-                    <span class="material-symbols-outlined text-base">lock</span>
+                    <x-lucide-lock width="16" height="16" />
                     Secure SSL Encryption
                 </span>
             </div>

@@ -8,25 +8,23 @@ use App\Filament\Resources\ContactMessages\Pages\ListContactMessages;
 use App\Filament\Resources\ContactMessages\Schemas\ContactMessageForm;
 use App\Filament\Resources\ContactMessages\Tables\ContactMessagesTable;
 use App\Models\ContactMessage;
-use BackedEnum;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 
 class ContactMessageResource extends Resource
 {
     protected static ?string $model = ContactMessage::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedChatBubbleLeftRight;
+    protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-left-right';
 
-    protected static \UnitEnum|string|null $navigationGroup = 'Lead Management';
+    protected static ?string $navigationGroup = 'Lead Management';
 
     protected static ?string $recordTitleAttribute = 'name';
 
-    public static function form(Schema $schema): Schema
+    public static function form(Form $form): Form
     {
-        return ContactMessageForm::configure($schema);
+        return ContactMessageForm::configure($form);
     }
 
     public static function table(Table $table): Table

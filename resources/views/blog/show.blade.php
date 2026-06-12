@@ -1,4 +1,4 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
 @section('title', $article->title . ' | Elvora Innovations')
 
@@ -14,7 +14,7 @@
             <!-- Breadcrumb Navigation -->
             <nav class="flex items-center space-x-1 text-slate-400 text-xs font-bold uppercase tracking-wider mb-8">
                 <a class="hover:text-brand-primary dark:hover:text-white transition-colors" href="{{ route('blog') }}">Blog</a>
-                <span class="material-symbols-outlined text-sm">chevron_right</span>
+                <x-lucide-chevron-right class="w-4 h-4" />
                 <span>{{ $article->category->name ?? 'Technology' }}</span>
             </nav>
 
@@ -57,7 +57,7 @@
                     <button @click="navigator.clipboard.writeText(window.location.href); alert('Link copied to clipboard!');" 
                             class="w-10 h-10 flex items-center justify-center rounded-full border border-brand-borderLight dark:border-white/10 text-brand-textMuted dark:text-slate-400 hover:text-brand-primary dark:hover:text-white hover:border-brand-primary dark:hover:border-white transition-all" 
                             title="Copy Link">
-                        <span class="material-symbols-outlined text-sm">share</span>
+                        <x-lucide-share-2 class="w-4 h-4" />
                     </button>
                     <div class="w-px h-10 bg-brand-borderLight dark:border-white/10"></div>
                 </aside>
@@ -94,7 +94,7 @@
                             <h2 class="font-display font-extrabold text-2xl text-brand-primary dark:text-white">Related Publications</h2>
                         </div>
                         <a class="text-xs font-bold text-brand-primary dark:text-brand-secondary flex items-center gap-1 hover:underline" href="{{ route('blog') }}">
-                            View all publications <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            View all publications <x-lucide-arrow-right class="w-4 h-4" />
                         </a>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -115,7 +115,7 @@
                                     </div>
                                 </div>
                                 <div class="px-6 pb-6 pt-2">
-                                    <span class="text-[10px] font-bold text-brand-primary dark:text-brand-secondary flex items-center gap-0.5">Read Post <span class="material-symbols-outlined text-xs group-hover:translate-x-1 transition-transform">arrow_forward</span></span>
+                                    <span class="text-[10px] font-bold text-brand-primary dark:text-brand-secondary flex items-center gap-0.5">Read Post <x-lucide-arrow-right class="w-3 h-3 group-hover:translate-x-1 transition-transform" /></span>
                                 </div>
                             </a>
                         @endforeach

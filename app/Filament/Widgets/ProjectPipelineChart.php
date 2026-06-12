@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProjectPipelineChart extends ChartWidget
 {
-    protected ?string $heading = 'Monthly Project Requests';
+    protected static ?string $heading = 'Monthly Project Requests';
     
     protected static ?int $sort = 2;
     

@@ -2,20 +2,20 @@
 
 namespace App\Filament\Resources\ContactMessages\Schemas;
 
-use Filament\Schemas\Components\Grid;
-use Filament\Schemas\Components\Section;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\MarkdownEditor;
-use Filament\Schemas\Schema;
+use Filament\Forms\Form;
 
 class ContactMessageForm
 {
-    public static function configure(Schema $schema): Schema
+    public static function configure(Form $form): Form
     {
-        return $schema
-            ->components([
+        return $form
+            ->schema([
                 Grid::make(3)
                     ->schema([
                         Section::make([

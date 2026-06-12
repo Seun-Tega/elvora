@@ -33,7 +33,7 @@
                     <div class="space-y-2">
                         <label class="block text-xs font-bold text-slate-400 uppercase tracking-[0.15em]" for="password">Password</label>
                         <div class="relative group">
-                            <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-brand-secondary transition-colors text-[20px]">lock</span>
+                            <x-lucide-lock width="20" height="20" class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-brand-secondary transition-colors" />
                             <input class="auth-input w-full pl-11 pr-11 py-3 rounded-xl outline-none input-transition text-sm bg-slate-950/60 border border-white/10 text-white focus:border-brand-secondary focus:ring-4 focus:ring-brand-secondary/10" 
                                 id="password" 
                                 type="password" 
@@ -41,11 +41,12 @@
                                 placeholder="••••••••" 
                                 required 
                                 autocomplete="current-password" />
-                            <button class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors p-1" 
+                            <button class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors p-1" 
                                     type="button" 
                                     id="togglePassword"
                                     aria-label="Toggle password visibility">
-                                visibility
+                                <x-lucide-eye width="20" height="20" class="eye-icon" />
+                                <x-lucide-eye-off width="20" height="20" class="eye-off-icon hidden" />
                             </button>
                         </div>
                         @if($errors->has('password'))
@@ -58,7 +59,7 @@
                             type="submit"
                             id="submitBtn">
                         <span>Confirm Security</span>
-                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-0.5 text-lg">lock_open</span>
+                        <x-lucide-lock width="18" height="18" class="transition-transform group-hover:translate-x-0.5" />
                     </button>
                 </form>
             </div>
@@ -91,10 +92,20 @@
 
             // Password Visibility Toggle
             if (togglePass && passInput) {
+                const eyeIcon = togglePass.querySelector('.eye-icon');
+                const eyeOffIcon = togglePass.querySelector('.eye-off-icon');
+
                 togglePass.addEventListener('click', () => {
                     const type = passInput.getAttribute('type') === 'password' ? 'text' : 'password';
                     passInput.setAttribute('type', type);
-                    togglePass.textContent = type === 'password' ? 'visibility' : 'visibility_off';
+                    
+                    if (type === 'password') {
+                        eyeIcon.classList.remove('hidden');
+                        eyeOffIcon.classList.add('hidden');
+                    } else {
+                        eyeIcon.classList.add('hidden');
+                        eyeOffIcon.classList.remove('hidden');
+                    }
                 });
             }
         });

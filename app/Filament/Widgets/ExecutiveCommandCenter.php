@@ -10,7 +10,7 @@ use Filament\Widgets\Widget;
 
 class ExecutiveCommandCenter extends Widget
 {
-    protected string $view = 'filament.widgets.executive-command-center';
+    protected static string $view = 'filament.widgets.executive-command-center';
 
     protected static ?int $sort = -2;
 

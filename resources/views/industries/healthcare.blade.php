@@ -1,4 +1,4 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
 @section('title', 'Healthcare Solutions | Elvora Innovation')
 
@@ -22,7 +22,7 @@
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 grid lg:grid-cols-2 items-center gap-12">
             <div class="z-10 relative space-y-6">
                 <div class="inline-flex items-center space-x-2 bg-blue-50 dark:bg-slate-900 text-brand-primary dark:text-brand-secondary border border-blue-100 dark:border-white/10 px-4 py-1.5 rounded-full shadow-sm">
-                    <span class="material-symbols-outlined text-[18px]">health_and_safety</span>
+                    <x-lucide-shield-check class="w-5 h-5" />
                     <span class="font-display font-bold uppercase tracking-wider text-[11px]">Secure Health Systems</span>
                 </div>
                 <h1 class="font-display text-4xl md:text-5xl font-extrabold leading-tight text-brand-primary dark:text-white">
@@ -44,7 +44,7 @@
                 <!-- Floater -->
                 <div class="absolute -top-4 -right-4 glass-card p-4 rounded-xl shadow-premium z-20 flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-full bg-brand-secondary/15 flex items-center justify-center">
-                        <span class="material-symbols-outlined text-brand-secondary">monitoring</span>
+                        <x-lucide-eye class="w-5 h-5 text-brand-secondary" />
                     </div>
                     <div>
                         <p class="text-[10px] font-bold uppercase tracking-wider text-brand-textMuted dark:text-slate-400">System Performance</p>
@@ -67,7 +67,7 @@
                 <!-- Telemedicine Systems -->
                 <div class="md:col-span-8 bg-brand-surfaceLight dark:bg-slate-900/40 p-8 rounded-2xl border border-brand-borderLight dark:border-white/10 hover:shadow-premium transition-all group overflow-hidden relative">
                     <div class="relative z-10 space-y-4">
-                        <span class="material-symbols-outlined text-[40px] text-brand-secondary mb-2 group-hover:scale-110 transition-transform">videocam</span>
+                        <x-lucide-video class="w-10 h-10 text-brand-secondary mb-2 group-hover:scale-110 transition-transform" />
                         <h3 class="font-display font-bold text-xl text-brand-primary dark:text-white">Virtual Consultation Platforms</h3>
                         <p class="text-brand-textMuted dark:text-slate-400 text-sm leading-relaxed max-w-lg">
                             Secure, high-quality audio and video channels built directly into your clinical interface. Tailored patient portals designed for direct specialist care and remote check-ins.
@@ -78,7 +78,7 @@
                 <!-- AI Diagnostics -->
                 <div class="md:col-span-4 bg-brand-primary p-8 rounded-2xl border border-brand-primaryDark hover:shadow-premium transition-all relative group flex flex-col justify-between">
                     <div class="space-y-4">
-                        <span class="material-symbols-outlined text-[40px] text-brand-secondary mb-2">neurology</span>
+                        <x-lucide-cpu class="w-10 h-10 text-brand-secondary mb-2" />
                         <h3 class="font-display font-bold text-xl text-white">Intelligent Diagnostics</h3>
                         <p class="text-blue-100 text-sm leading-relaxed">
                             Employing smart systems to assist in medical imaging analysis and prompt symptom identification.
@@ -86,13 +86,13 @@
                     </div>
                     <a href="{{ route('project') }}" class="mt-8 flex items-center text-brand-secondary font-bold text-xs space-x-1 group-hover:translate-x-2 transition-transform">
                         <span>Explore Capabilities</span>
-                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        <x-lucide-arrow-right class="w-4 h-4" />
                     </a>
                 </div>
                 <!-- Health Data Interoperability -->
                 <div class="md:col-span-5 bg-brand-surfaceLight dark:bg-slate-900/40 p-8 rounded-2xl border border-brand-borderLight dark:border-white/10 hover:shadow-premium transition-all space-y-4">
                     <div class="w-12 h-12 bg-white dark:bg-slate-950 rounded-full flex items-center justify-center border border-brand-borderLight dark:border-white/10">
-                        <span class="material-symbols-outlined text-brand-primary dark:text-brand-secondary">hub</span>
+                        <x-lucide-maximize class="w-5 h-5 text-brand-primary dark:text-brand-secondary" />
                     </div>
                     <h3 class="font-display font-bold text-xl text-brand-primary dark:text-white">Seamless Record Integration</h3>
                     <p class="text-brand-textMuted dark:text-slate-400 text-sm leading-relaxed">
@@ -108,7 +108,7 @@
                                 Dedicated hosting and storage environments designed specifically for highly sensitive clinical information.
                             </p>
                         </div>
-                        <span class="material-symbols-outlined text-[48px] text-brand-primary/20 dark:text-brand-secondary/20 group-hover:text-brand-primary dark:group-hover:text-brand-secondary transition-colors">verified_user</span>
+                        <x-lucide-shield-check class="w-12 h-12 text-brand-primary/20 dark:text-brand-secondary/20 group-hover:text-brand-primary dark:group-hover:text-brand-secondary transition-colors" />
                     </div>
                     <div class="mt-8 grid grid-cols-3 gap-4">
                         <div class="text-center p-3 bg-white dark:bg-slate-950 rounded-xl border border-brand-borderLight dark:border-white/10 shadow-sm">
@@ -134,7 +134,7 @@
         <div class="max-w-[1400px] mx-auto px-6 md:px-12 grid lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-7 space-y-6">
                 <div class="text-brand-secondary font-bold text-xs uppercase tracking-widest flex items-center">
-                    <span class="material-symbols-outlined mr-1 text-base">lock</span> TRUST &amp; SAFETY
+                    <x-lucide-lock class="w-4 h-4 mr-1" /> TRUST &amp; SAFETY
                 </div>
                 <h2 class="font-display font-extrabold text-3xl md:text-4xl text-brand-primary dark:text-white leading-tight">Global Security Standards by Design</h2>
                 <p class="text-brand-textMuted dark:text-slate-400 text-lg leading-relaxed">
@@ -142,14 +142,14 @@
                 </p>
                 <div class="space-y-4 pt-2">
                     <div class="flex items-start space-x-3">
-                        <span class="material-symbols-outlined text-brand-primary dark:text-brand-secondary text-xl">check_circle</span>
+                        <x-lucide-check-circle class="w-5 h-5 text-brand-primary dark:text-brand-secondary" />
                         <div>
                             <h4 class="font-display font-bold text-sm text-brand-primary dark:text-white">Automated Audit Trails</h4>
                             <p class="text-brand-textMuted dark:text-slate-400 text-xs mt-0.5">Continuous logs documenting system access, ready for verification audits at any moment.</p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-3">
-                        <span class="material-symbols-outlined text-brand-primary dark:text-brand-secondary text-xl">check_circle</span>
+                        <x-lucide-check-circle class="w-5 h-5 text-brand-primary dark:text-brand-secondary" />
                         <div>
                             <h4 class="font-display font-bold text-sm text-brand-primary dark:text-white">Individual Control</h4>
                             <p class="text-brand-textMuted dark:text-slate-400 text-xs mt-0.5">Simple options allowing users to manage, verify, and delete their medical data history.</p>
@@ -160,19 +160,19 @@
             
             <div class="lg:col-span-5 grid grid-cols-2 gap-4">
                 <div class="bg-white dark:bg-slate-900/60 p-6 rounded-xl border border-brand-borderLight dark:border-white/10 shadow-sm flex flex-col items-center text-center">
-                    <span class="material-symbols-outlined text-4xl text-brand-secondary mb-3">verified</span>
+                    <x-lucide-badge-check class="w-10 h-10 text-brand-secondary mb-3" />
                     <p class="font-display font-bold text-xs text-brand-primary dark:text-white">Fully Certified</p>
                 </div>
                 <div class="bg-white dark:bg-slate-900/60 p-6 rounded-xl border border-brand-borderLight dark:border-white/10 shadow-sm flex flex-col items-center text-center">
-                    <span class="material-symbols-outlined text-4xl text-brand-secondary mb-3">gavel</span>
+                    <x-lucide-scale class="w-10 h-10 text-brand-secondary mb-3" />
                     <p class="font-display font-bold text-xs text-brand-primary dark:text-white">Globally Compliant</p>
                 </div>
                 <div class="col-span-2 bg-brand-primary p-4 rounded-xl flex items-center justify-between border border-brand-primaryDark">
                     <div class="flex items-center space-x-3">
-                        <span class="material-symbols-outlined text-white text-[28px]">security</span>
+                        <x-lucide-shield-alert class="w-7 h-7 text-white" />
                         <span class="text-white text-xs font-semibold">Verified Secure Server Infrastructure</span>
                     </div>
-                    <span class="material-symbols-outlined text-brand-secondary">shield_with_heart</span>
+                    <x-lucide-heart class="w-5 h-5 text-brand-secondary" />
                 </div>
             </div>
         </div>

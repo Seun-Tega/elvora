@@ -8,21 +8,19 @@ use App\Filament\Resources\Customers\Pages\ListCustomers;
 use App\Filament\Resources\Customers\Schemas\CustomerForm;
 use App\Filament\Resources\Customers\Tables\CustomersTable;
 use App\Models\Customer;
-use BackedEnum;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 
 class CustomerResource extends Resource
 {
     protected static ?string $model = Customer::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    public static function form(Schema $schema): Schema
+    public static function form(Form $form): Form
     {
-        return CustomerForm::configure($schema);
+        return CustomerForm::configure($form);
     }
 
     public static function table(Table $table): Table

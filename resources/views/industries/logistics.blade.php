@@ -1,4 +1,4 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
 @section('title', 'Logistics & Supply Chain | Elvora Innovation')
 
@@ -36,7 +36,7 @@
                 <div class="flex flex-wrap gap-4 pt-2">
                     <a href="{{ route('project') }}" class="bg-brand-secondary hover:bg-brand-secondaryDark text-white px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:scale-[1.02] transition-transform">
                         <span>Deploy Infrastructure</span>
-                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        <x-lucide-arrow-right class="w-4 h-4" />
                     </a>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                     <div class="space-y-4">
                         <div class="flex items-center justify-between">
                             <h3 class="font-display font-bold text-lg text-brand-primary dark:text-white">Fleet Monitoring</h3>
-                            <span class="material-symbols-outlined text-brand-primary dark:text-brand-secondary">monitoring</span>
+                            <x-lucide-eye class="w-5 h-5 text-brand-primary dark:text-brand-secondary" />
                         </div>
                         <div class="h-44 w-full bg-slate-100 dark:bg-slate-950 rounded-xl flex items-end p-4 space-x-2 overflow-hidden border border-brand-borderLight dark:border-white/10">
                             <div class="bg-brand-primary dark:bg-brand-secondary h-1/2 w-full rounded-t-sm"></div>
@@ -126,21 +126,21 @@
                 <div class="group bg-white dark:bg-slate-900/40 p-8 rounded-2xl border border-brand-borderLight dark:border-white/10 hover:border-brand-primary hover:shadow-premium transition-all flex flex-col justify-between">
                     <div class="space-y-4">
                         <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-slate-950 border border-blue-100 dark:border-white/10 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-brand-primary dark:text-brand-secondary">location_searching</span>
+                            <x-lucide-map-pin class="w-5 h-5 text-brand-primary dark:text-brand-secondary" />
                         </div>
                         <h3 class="font-display font-bold text-xl text-brand-primary dark:text-white">Live Tracking Systems</h3>
                         <p class="text-brand-textMuted dark:text-slate-400 text-sm leading-relaxed">Integrated tracking units providing precise coordinates and temperature monitoring for every parcel.</p>
                     </div>
                     <a href="{{ route('project') }}" class="text-brand-primary dark:text-brand-secondary font-bold flex items-center gap-1 mt-6 text-sm">
                         <span>Learn More</span>
-                        <span class="material-symbols-outlined text-sm">north_east</span>
+                        <x-lucide-external-link class="w-4 h-4" />
                     </a>
                 </div>
                 <!-- Supply Chain Orchestration -->
                 <div class="group bg-brand-primary p-8 rounded-2xl flex flex-col justify-between hover:shadow-premium transition-all border border-brand-primaryDark">
                     <div class="space-y-4">
                         <div class="w-12 h-12 rounded-xl bg-brand-secondary/20 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-brand-secondary">hub</span>
+                            <x-lucide-maximize class="w-5 h-5 text-brand-secondary" />
                         </div>
                         <h3 class="font-display font-bold text-xl text-white">Network Coordination</h3>
                         <p class="text-blue-100 text-sm leading-relaxed">Continuous analysis that flags potential transport bottlenecks before they impact your fulfillment.</p>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
 @section('title', 'Elvora Innovation | Building Digital Products That Solve Real Problems')
 
@@ -87,7 +87,7 @@
         </div>
 
         <!-- Slides Content (Fixed Position, Swaps Content) -->
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 w-full flex flex-col items-center text-center">
+        <div class="max-w-[1600px] w-full mx-auto px-4 relative z-10 w-full flex flex-col items-center text-center">
             
             <!-- Slide 1 Content -->
             <div x-show="activeSlide === 0"
@@ -103,7 +103,7 @@
                     <span class="font-display font-bold uppercase tracking-[0.2em] text-[10px] text-white/80">Strategy . Innovation</span>
                 </div>
                 
-                <h1 class="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] font-extrabold tracking-tighter text-white">
+                <h1 class="font-display text-fluid-4xl lg:text-fluid-5xl xl:text-fluid-6xl leading-[1.1] font-extrabold tracking-tighter text-white">
                     Building <span class="text-brand-secondary drop-shadow-sm">Digital Products</span> <br/>That Solve Real Problems
                 </h1>
                 
@@ -114,7 +114,7 @@
                 <div class="flex flex-wrap justify-center gap-4 pt-2">
                     <a href="{{ route('project') }}" class="group bg-brand-primary text-white hover:bg-brand-primaryDark px-8 py-4 rounded-xl font-bold text-sm flex items-center space-x-3 shadow-2xl transition-all hover:-translate-y-1 active:scale-95 duration-300">
                         <span>Start a Project</span>
-                        <span class="material-symbols-outlined text-xs group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        <x-lucide-arrow-right class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </a>
                     <a href="{{ route('contact') }}" class="backdrop-blur-md border border-white/10 hover:bg-white/5 text-white px-8 py-4 rounded-xl font-bold text-sm transition-all hover:-translate-y-1 active:scale-95 duration-300">
                         Book a Consultation
@@ -137,7 +137,7 @@
                     <span class="font-display font-bold uppercase tracking-[0.2em] text-[10px] text-white/80">Enterprise Engineering</span>
                 </div>
                 
-                <h1 class="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] font-extrabold tracking-tighter text-white">
+                <h1 class="font-display text-fluid-4xl lg:text-fluid-5xl xl:text-fluid-6xl leading-[1.1] font-extrabold tracking-tighter text-white">
                     Engineer Software <br/><span class="text-brand-secondary drop-shadow-sm">That Scales Dynamically</span>
                 </h1>
                 
@@ -148,7 +148,7 @@
                 <div class="flex flex-wrap justify-center gap-4 pt-2">
                     <a href="{{ route('services') }}" class="group bg-brand-primary text-white hover:bg-brand-primaryDark px-8 py-4 rounded-xl font-bold text-sm flex items-center space-x-3 shadow-2xl transition-all hover:-translate-y-1 active:scale-95 duration-300">
                         <span>Explore Services</span>
-                        <span class="material-symbols-outlined text-xs group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        <x-lucide-arrow-right class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </a>
                     <a href="{{ route('project') }}" class="backdrop-blur-md border border-white/10 hover:bg-white/5 text-white px-8 py-4 rounded-xl font-bold text-sm transition-all hover:-translate-y-1 active:scale-95 duration-300">
                         Discuss Architecture
@@ -171,7 +171,7 @@
                     <span class="font-display font-bold uppercase tracking-[0.2em] text-[10px] text-white/80">Human-Centered Design</span>
                 </div>
                 
-                <h1 class="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] font-extrabold tracking-tighter text-white">
+                <h1 class="font-display text-fluid-4xl lg:text-fluid-5xl xl:text-fluid-6xl leading-[1.1] font-extrabold tracking-tighter text-white">
                     Sleek Design and UX <br/><span class="text-brand-secondary drop-shadow-sm">Built for Engagement</span>
                 </h1>
                 
@@ -182,7 +182,7 @@
                 <div class="flex flex-wrap justify-center gap-4 pt-2">
                     <a href="{{ route('project') }}" class="group bg-brand-primary text-white hover:bg-brand-primaryDark px-8 py-4 rounded-xl font-bold text-sm flex items-center space-x-3 shadow-2xl transition-all hover:-translate-y-1 active:scale-95 duration-300">
                         <span>Design Your App</span>
-                        <span class="material-symbols-outlined text-xs group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        <x-lucide-arrow-right class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </a>
                     <a href="{{ route('about') }}" class="backdrop-blur-md border border-white/10 hover:bg-white/5 text-white px-8 py-4 rounded-xl font-bold text-sm transition-all hover:-translate-y-1 active:scale-95 duration-300">
                         Our Philosophy
@@ -193,10 +193,10 @@
 
         <!-- Navigation Arrows -->
         <button @click="prev()" class="absolute left-6 z-20 hidden md:flex items-center justify-center w-14 h-14 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-white hover:bg-white/10 hover:border-white/25 active:scale-95 transition-all duration-300" aria-label="Previous Slide">
-            <span class="material-symbols-outlined text-[24px]">chevron_left</span>
+            <x-lucide-chevron-left class="w-6 h-6" />
         </button>
         <button @click="next()" class="absolute right-6 z-20 hidden md:flex items-center justify-center w-14 h-14 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-white hover:bg-white/10 hover:border-white/25 active:scale-95 transition-all duration-300" aria-label="Next Slide">
-            <span class="material-symbols-outlined text-[24px]">chevron_right</span>
+            <x-lucide-chevron-right class="w-6 h-6" />
         </button>
 
         <!-- Bottom Navigation Indicators -->
@@ -218,7 +218,7 @@
 
     <!-- Continuous Logo Marquee -->
     <section class="py-20 bg-white dark:bg-brand-surfaceDark border-b border-brand-borderLight dark:border-white/5 overflow-hidden relative">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 mb-10">
+        <div class="max-w-[1600px] w-full mx-auto px-4 mb-10">
             <div class="flex flex-col items-center text-center space-y-3">
                 <p class="text-[10px] font-black uppercase tracking-[0.5em] text-brand-secondary opacity-80">
                     Trusted Product Engineering
@@ -267,7 +267,7 @@
         <div class="absolute top-1/4 -left-20 w-96 h-96 bg-brand-primary/5 dark:bg-brand-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
         <div class="absolute bottom-1/4 -right-20 w-80 h-80 bg-brand-secondary/5 dark:bg-brand-secondary/10 rounded-full blur-[100px] pointer-events-none animate-pulse delay-700"></div>
 
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 grid lg:grid-cols-12 gap-16 items-center relative z-10">
+        <div class="max-w-[1600px] w-full mx-auto px-4 grid lg:grid-cols-12 gap-16 items-center relative z-10">
             <!-- Left Info: Dynamic Content -->
             <div class="lg:col-span-7 space-y-10">
                 <div class="space-y-4">
@@ -275,7 +275,7 @@
                           :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'">
                         Our Focus
                     </span>
-                    <h2 class="font-display font-black text-4xl md:text-5xl lg:text-6xl text-brand-primary dark:text-white tracking-tight leading-[1.1] transition-all duration-1000 delay-100 transform"
+                    <h2 class="font-display font-black text-fluid-3xl lg:text-fluid-4xl text-brand-primary dark:text-white tracking-tight leading-[1.1] transition-all duration-1000 delay-100 transform"
                         :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
                         Innovation Driven. <br/>
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-primary animate-gradient-x dark:from-white dark:via-brand-secondary dark:to-white">Results Focused.</span>
@@ -287,11 +287,9 @@
                     Elvora Innovation is a company helping businesses turn ideas into products that grow. From planning and analysis to design and building, we work with you to create products that people love.
                 </p>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-6 border-t border-brand-borderLight dark:border-white/10 transition-all duration-1000 delay-500 transform"
-                     :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
                     <div class="flex items-start gap-4 group cursor-default">
                         <div class="w-12 h-12 rounded-xl bg-brand-primary/5 dark:bg-white/5 flex items-center justify-center text-brand-secondary transition-all duration-300 group-hover:bg-brand-secondary group-hover:text-white">
-                            <span class="material-symbols-outlined font-bold transition-transform duration-500 group-hover:scale-110">check_circle</span>
+                            <x-lucide-zap class="w-6 h-6" />
                         </div>
                         <div>
                             <h4 class="font-display font-bold text-brand-primary dark:text-white text-lg">Fast & Flexible</h4>
@@ -300,7 +298,7 @@
                     </div>
                     <div class="flex items-start gap-4 group cursor-default">
                         <div class="w-12 h-12 rounded-xl bg-brand-primary/5 dark:bg-white/5 flex items-center justify-center text-brand-secondary transition-all duration-300 group-hover:bg-brand-secondary group-hover:text-white">
-                            <span class="material-symbols-outlined font-bold transition-transform duration-500 group-hover:scale-110">check_circle</span>
+                            <x-lucide-target class="w-6 h-6" />
                         </div>
                         <div>
                             <h4 class="font-display font-bold text-brand-primary dark:text-white text-lg">Product-First Mindset</h4>
@@ -379,8 +377,8 @@
                     </div>
 
                     <div class="absolute -right-10 bottom-20 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 rounded-2xl p-4 shadow-2xl flex items-center gap-4 animate-float-slow delay-500 z-30 transition-transform group-hover:-translate-x-2">
-                        <div class="w-10 h-10 rounded-xl bg-brand-secondary/10 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-brand-secondary text-xl font-bold">workspace_premium</span>
+                        <div class="w-10 h-10 rounded-xl bg-brand-secondary/10 flex items-center justify-center text-brand-secondary">
+                            <x-lucide-award class="w-5 h-5" />
                         </div>
                         <div class="flex flex-col">
                             <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">Quality</span>
@@ -409,13 +407,13 @@
         <!-- Subtle Background Glow -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-primary/[0.02] dark:bg-brand-secondary/[0.02] rounded-full blur-[120px] pointer-events-none"></div>
 
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+        <div class="max-w-[1600px] w-full mx-auto px-4 relative z-10">
             <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
                 <span class="text-brand-secondary font-bold text-xs uppercase tracking-[0.4em] block transition-all duration-700 transform"
                       :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'">
                     What We Do
                 </span>
-                <h2 class="font-display font-black text-4xl md:text-5xl text-brand-primary dark:text-white tracking-tight transition-all duration-1000 delay-100 transform"
+                <h2 class="font-display font-black text-fluid-3xl lg:text-fluid-4xl text-brand-primary dark:text-white tracking-tight transition-all duration-1000 delay-100 transform"
                     :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
                     How We Help You
                 </h2>
@@ -435,7 +433,7 @@
 
                     <div class="space-y-6 relative z-10">
                         <div class="w-14 h-14 rounded-2xl bg-white dark:bg-brand-surfaceDark border border-brand-borderLight dark:border-white/10 flex items-center justify-center text-brand-primary dark:text-brand-secondary shadow-sm group-hover:bg-brand-secondary group-hover:text-white group-hover:rotate-6 transition-all duration-500">
-                            <span class="material-symbols-outlined text-3xl">insights</span>
+                            <x-lucide-search class="w-7 h-7" />
                         </div>
                         <h3 class="font-display font-bold text-xl text-brand-primary dark:text-white group-hover:text-brand-secondary transition-colors duration-300">Product Planning</h3>
                         <p class="text-brand-textMuted dark:text-slate-400 text-sm leading-relaxed font-medium">
@@ -455,7 +453,7 @@
 
                     <div class="space-y-6 relative z-10">
                         <div class="w-14 h-14 rounded-2xl bg-white dark:bg-brand-surfaceDark border border-brand-borderLight dark:border-white/10 flex items-center justify-center text-brand-primary dark:text-brand-secondary shadow-sm group-hover:bg-brand-secondary group-hover:text-white group-hover:-rotate-6 transition-all duration-500">
-                            <span class="material-symbols-outlined text-3xl">code</span>
+                            <x-lucide-code-2 class="w-7 h-7" />
                         </div>
                         <h3 class="font-display font-bold text-xl text-brand-primary dark:text-white group-hover:text-brand-secondary transition-colors duration-300">Web Building</h3>
                         <p class="text-brand-textMuted dark:text-slate-400 text-sm leading-relaxed font-medium">
@@ -475,7 +473,7 @@
 
                     <div class="space-y-6 relative z-10">
                         <div class="w-14 h-14 rounded-2xl bg-white dark:bg-brand-surfaceDark border border-brand-borderLight dark:border-white/10 flex items-center justify-center text-brand-primary dark:text-brand-secondary shadow-sm group-hover:bg-brand-secondary group-hover:text-white group-hover:rotate-6 transition-all duration-500">
-                            <span class="material-symbols-outlined text-3xl">phone_iphone</span>
+                            <x-lucide-smartphone class="w-7 h-7" />
                         </div>
                         <h3 class="font-display font-bold text-xl text-brand-primary dark:text-white group-hover:text-brand-secondary transition-colors duration-300">Mobile App Building</h3>
                         <p class="text-brand-textMuted dark:text-slate-400 text-sm leading-relaxed font-medium">
@@ -495,7 +493,7 @@
 
                     <div class="space-y-6 relative z-10">
                         <div class="w-14 h-14 rounded-2xl bg-white dark:bg-brand-surfaceDark border border-brand-borderLight dark:border-white/10 flex items-center justify-center text-brand-primary dark:text-brand-secondary shadow-sm group-hover:bg-brand-secondary group-hover:text-white group-hover:-rotate-6 transition-all duration-500">
-                            <span class="material-symbols-outlined text-3xl">palette</span>
+                            <x-lucide-figma class="w-7 h-7" />
                         </div>
                         <h3 class="font-display font-bold text-xl text-brand-primary dark:text-white group-hover:text-brand-secondary transition-colors duration-300">Design for People</h3>
                         <p class="text-brand-textMuted dark:text-slate-400 text-sm leading-relaxed font-medium">
@@ -515,7 +513,7 @@
 
                     <div class="space-y-6 relative z-10">
                         <div class="w-14 h-14 rounded-2xl bg-white dark:bg-brand-surfaceDark border border-brand-borderLight dark:border-white/10 flex items-center justify-center text-brand-primary dark:text-brand-secondary shadow-sm group-hover:bg-brand-secondary group-hover:text-white group-hover:rotate-6 transition-all duration-500">
-                            <span class="material-symbols-outlined text-3xl">rocket_launch</span>
+                            <x-lucide-lightbulb class="w-7 h-7" />
                         </div>
                         <h3 class="font-display font-bold text-xl text-brand-primary dark:text-white group-hover:text-brand-secondary transition-colors duration-300">Building New Ideas</h3>
                         <p class="text-brand-textMuted dark:text-slate-400 text-sm leading-relaxed font-medium">
@@ -535,7 +533,7 @@
 
                     <div class="space-y-6 relative z-10">
                         <div class="w-14 h-14 rounded-2xl bg-white dark:bg-brand-surfaceDark border border-brand-borderLight dark:border-white/10 flex items-center justify-center text-brand-primary dark:text-brand-secondary shadow-sm group-hover:bg-brand-secondary group-hover:text-white group-hover:-rotate-6 transition-all duration-500">
-                            <span class="material-symbols-outlined text-3xl">settings_suggest</span>
+                            <x-lucide-trending-up class="w-7 h-7" />
                         </div>
                         <h3 class="font-display font-bold text-xl text-brand-primary dark:text-white group-hover:text-brand-secondary transition-colors duration-300">Business Growth</h3>
                         <p class="text-brand-textMuted dark:text-slate-400 text-sm leading-relaxed font-medium">
@@ -552,10 +550,10 @@
 
     <!-- Industries We Serve (Who We Help) -->
     <section class="py-32 bg-brand-surfaceLight dark:bg-brand-primaryDark border-b border-brand-borderLight dark:border-white/5 relative">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+        <div class="max-w-[1600px] w-full mx-auto px-4 relative z-10">
             <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
                 <span class="text-brand-secondary font-bold text-xs uppercase tracking-[0.4em] block">Sectors</span>
-                <h2 class="font-display font-extrabold text-4xl md:text-5xl text-brand-primary dark:text-white tracking-tight">Who We Help</h2>
+                <h2 class="font-display font-extrabold text-fluid-3xl lg:text-fluid-4xl text-brand-primary dark:text-white tracking-tight">Who We Help</h2>
                 <p class="text-brand-textMuted dark:text-slate-400 text-lg">Special help for different types of businesses and organizations.</p>
             </div>
 
@@ -565,11 +563,13 @@
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 -z-20" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80')"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent -z-10 group-hover:via-slate-950/50 transition-all"></div>
                     <div class="space-y-3">
-                        <span class="material-symbols-outlined text-brand-secondary text-3xl">health_and_safety</span>
+                        <div class="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center text-brand-secondary mb-2 transition-transform duration-500 group-hover:rotate-12">
+                            <x-lucide-activity class="w-6 h-6" />
+                        </div>
                         <h4 class="font-display font-bold text-xl text-white">Healthcare</h4>
                         <p class="text-xs text-slate-300 font-medium leading-relaxed">Tools for doctors and patients to connect and work together easily.</p>
                         <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-secondary flex items-center gap-2 pt-2">
-                            Explore <span class="material-symbols-outlined text-xs transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+                            Explore 
                         </span>
                     </div>
                 </a>
@@ -580,12 +580,12 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent -z-10 group-hover:via-slate-950/50 transition-all"></div>
                     <div class="space-y-3">
                         <div class="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center text-brand-secondary mb-2 transition-transform duration-500 group-hover:rotate-12">
-                            <span class="material-symbols-outlined text-3xl">school</span>
+                            <x-lucide-graduation-cap class="w-6 h-6" />
                         </div>
                         <h4 class="font-display font-bold text-xl text-white">Education</h4>
                         <p class="text-xs text-slate-300 font-medium leading-relaxed">Modern platforms for schools and students to learn and grow digital skills.</p>
                         <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-secondary flex items-center gap-2 pt-2">
-                            Empowering Learning <span class="material-symbols-outlined text-xs transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+                            Empowering Learning 
                         </span>
                     </div>
                 </div>
@@ -595,11 +595,13 @@
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 -z-20" style="background-image: url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80')"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent -z-10 group-hover:via-slate-950/50 transition-all"></div>
                     <div class="space-y-3">
-                        <span class="material-symbols-outlined text-brand-secondary text-3xl">account_balance</span>
+                        <div class="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center text-brand-secondary mb-2 transition-transform duration-500 group-hover:rotate-12">
+                            <x-lucide-landmark class="w-6 h-6" />
+                        </div>
                         <h4 class="font-display font-bold text-xl text-white">Money &amp; Banking</h4>
                         <p class="text-xs text-slate-300 font-medium leading-relaxed">Simple and safe ways to manage money and pay for things online.</p>
                         <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-secondary flex items-center gap-2 pt-2">
-                            Explore <span class="material-symbols-outlined text-xs transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+                            Explore 
                         </span>
                     </div>
                 </a>
@@ -609,11 +611,13 @@
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 -z-20" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80')"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent -z-10 group-hover:via-slate-950/50 transition-all"></div>
                     <div class="space-y-3">
-                        <span class="material-symbols-outlined text-brand-secondary text-3xl">local_shipping</span>
+                        <div class="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center text-brand-secondary mb-2 transition-transform duration-500 group-hover:rotate-12">
+                            <x-lucide-truck class="w-6 h-6" />
+                        </div>
                         <h4 class="font-display font-bold text-xl text-white">Shipping &amp; Delivery</h4>
                         <p class="text-xs text-slate-300 font-medium leading-relaxed">Systems to help track packages and manage moving goods.</p>
                         <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-secondary flex items-center gap-2 pt-2">
-                            Explore <span class="material-symbols-outlined text-xs transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+                            Explore 
                         </span>
                     </div>
                 </a>
@@ -623,11 +627,13 @@
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 -z-20" style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80')"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent -z-10 group-hover:via-slate-950/50 transition-all"></div>
                     <div class="space-y-3">
-                        <span class="material-symbols-outlined text-brand-secondary text-3xl">gavel</span>
+                        <div class="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center text-brand-secondary mb-2 transition-transform duration-500 group-hover:rotate-12">
+                            <x-lucide-building-2 class="w-6 h-6" />
+                        </div>
                         <h4 class="font-display font-bold text-xl text-white">Public Services</h4>
                         <p class="text-xs text-slate-300 font-medium leading-relaxed">Helping people connect with their local groups and services online.</p>
                         <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-secondary flex items-center gap-2 pt-2">
-                            Explore <span class="material-symbols-outlined text-xs transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+                            Explore 
                         </span>
                     </div>
                 </a>
@@ -637,7 +643,9 @@
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 -z-20" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80')"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent -z-10"></div>
                     <div class="space-y-3">
-                        <span class="material-symbols-outlined text-brand-secondary text-3xl">business</span>
+                        <div class="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center text-brand-secondary mb-2 transition-transform duration-500 group-hover:rotate-12">
+                            <x-lucide-briefcase class="w-6 h-6" />
+                        </div>
                         <h4 class="font-display font-bold text-xl text-white">Large Companies</h4>
                         <p class="text-xs text-slate-300 font-medium leading-relaxed">Custom tools built to help large teams work better together.</p>
                     </div>
@@ -673,7 +681,7 @@
             .animate-float-slow { animation: float-slow 4s ease-in-out infinite; }
         </style>
         
-        <div class="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10" x-data="{
+        <div class="max-w-[1400px] w-full mx-auto px-4 relative z-10" x-data="{
             activeStep: 1,
             init() {
                 const observer = new IntersectionObserver((entries) => {
@@ -695,7 +703,7 @@
                 <div class="lg:col-span-5 lg:sticky lg:top-28 h-fit space-y-8">
                     <div>
                         <span class="text-brand-secondary font-bold text-xs uppercase tracking-[0.4em] block mb-2">Workflow</span>
-                        <h2 class="font-display font-extrabold text-3xl md:text-5xl text-brand-primary tracking-tight">Our Simple Process</h2>
+                        <h2 class="font-display font-extrabold text-fluid-3xl md:text-fluid-4xl text-brand-primary tracking-tight">Our Simple Process</h2>
                         <p class="text-slate-500 text-sm md:text-base mt-3 leading-relaxed">We combine strategic engineering with user-centric design to deliver exceptional digital products.</p>
                     </div>
                     
@@ -784,7 +792,7 @@
                                         <div class="h-6 bg-brand-primary/5 border border-brand-primary/10 rounded-lg"></div>
                                     </div>
                                     <div class="absolute bottom-0 right-0 p-2">
-                                        <span class="material-symbols-outlined text-brand-secondary text-xs opacity-40">edit</span>
+                                        
                                     </div>
                                 </div>
                                 <div class="text-[10px] font-display font-black uppercase tracking-[0.3em] text-slate-400">Crafting Visual Systems</div>
@@ -842,7 +850,7 @@
                             <!-- Step 6: Launch (Deployment) -->
                             <div x-show="activeStep === 6" x-transition.opacity.duration.500ms class="absolute inset-0 flex flex-col items-center justify-center">
                                 <div class="relative">
-                                    <span class="material-symbols-outlined text-4xl text-brand-secondary transition-all duration-1000" :class="activeStep === 6 ? '-translate-y-4' : 'translate-y-0'">rocket_launch</span>
+                                    <x-heroicon-o-rocket-launch class="w-10 h-10 text-brand-secondary transition-all duration-1000" x-bind:class="activeStep === 6 ? '-translate-y-4' : 'translate-y-0'" />
                                     <div x-show="activeStep === 6" class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-8 bg-brand-secondary/20 rounded-full blur-xl animate-pulse"></div>
                                 </div>
                                 <div class="mt-6 flex space-x-2">
@@ -875,7 +883,7 @@
                         <div class="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-brand-primary/5 blur-3xl group-hover:bg-brand-primary/10 transition-all duration-700"></div>
                         <div class="flex items-center gap-6 mb-8">
                             <div class="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-brand-primary transition-all duration-500 group-hover:bg-brand-primary group-hover:text-white group-hover:rotate-6">
-                                <span class="material-symbols-outlined text-3xl">search</span>
+                                <x-lucide-search class="w-7 h-7" />
                             </div>
                             <div class="text-4xl font-display font-black text-slate-100 group-hover:text-brand-primary/10 transition-colors">01</div>
                         </div>
@@ -901,7 +909,7 @@
                         <div class="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-brand-primary/5 blur-3xl group-hover:bg-brand-primary/10 transition-all duration-700"></div>
                         <div class="flex items-center gap-6 mb-8">
                             <div class="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-brand-primary transition-all duration-500 group-hover:bg-brand-primary group-hover:text-white group-hover:rotate-6">
-                                <span class="material-symbols-outlined text-3xl">architecture</span>
+                                <x-lucide-map class="w-7 h-7" />
                             </div>
                             <div class="text-4xl font-display font-black text-slate-100 group-hover:text-brand-primary/10 transition-colors">02</div>
                         </div>
@@ -927,7 +935,7 @@
                         <div class="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-brand-primary/5 blur-3xl group-hover:bg-brand-primary/10 transition-all duration-700"></div>
                         <div class="flex items-center gap-6 mb-8">
                             <div class="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-brand-primary transition-all duration-500 group-hover:bg-brand-primary group-hover:text-white group-hover:rotate-6">
-                                <span class="material-symbols-outlined text-3xl">brush</span>
+                                <x-lucide-figma class="w-7 h-7" />
                             </div>
                             <div class="text-4xl font-display font-black text-slate-100 group-hover:text-brand-primary/10 transition-colors">03</div>
                         </div>
@@ -953,7 +961,7 @@
                         <div class="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-brand-primary/5 blur-3xl group-hover:bg-brand-primary/10 transition-all duration-700"></div>
                         <div class="flex items-center gap-6 mb-8">
                             <div class="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-brand-primary transition-all duration-500 group-hover:bg-brand-primary group-hover:text-white group-hover:rotate-6">
-                                <span class="material-symbols-outlined text-3xl">developer_mode</span>
+                                <x-lucide-code-2 class="w-7 h-7" />
                             </div>
                             <div class="text-4xl font-display font-black text-slate-100 group-hover:text-brand-primary/10 transition-colors">04</div>
                         </div>
@@ -979,7 +987,7 @@
                         <div class="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-brand-primary/5 blur-3xl group-hover:bg-brand-primary/10 transition-all duration-700"></div>
                         <div class="flex items-center gap-6 mb-8">
                             <div class="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-brand-primary transition-all duration-500 group-hover:bg-brand-primary group-hover:text-white group-hover:rotate-6">
-                                <span class="material-symbols-outlined text-3xl">verified</span>
+                                <x-lucide-shield-check class="w-7 h-7" />
                             </div>
                             <div class="text-4xl font-display font-black text-slate-100 group-hover:text-brand-primary/10 transition-colors">05</div>
                         </div>
@@ -1005,7 +1013,7 @@
                         <div class="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-brand-primary/5 blur-3xl group-hover:bg-brand-primary/10 transition-all duration-700"></div>
                         <div class="flex items-center gap-6 mb-8">
                             <div class="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-brand-primary transition-all duration-500 group-hover:bg-brand-primary group-hover:text-white group-hover:rotate-6">
-                                <span class="material-symbols-outlined text-3xl">rocket</span>
+                                <x-lucide-rocket class="w-7 h-7" />
                             </div>
                             <div class="text-4xl font-display font-black text-slate-100 group-hover:text-brand-primary/10 transition-colors">06</div>
                         </div>
@@ -1031,7 +1039,7 @@
                         <div class="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-brand-primary/5 blur-3xl group-hover:bg-brand-primary/10 transition-all duration-700"></div>
                         <div class="flex items-center gap-6 mb-8">
                             <div class="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-brand-primary transition-all duration-500 group-hover:bg-brand-primary group-hover:text-white group-hover:rotate-6">
-                                <span class="material-symbols-outlined text-3xl">auto_graph</span>
+                                <x-lucide-trending-up class="w-7 h-7" />
                             </div>
                             <div class="text-4xl font-display font-black text-slate-100 group-hover:text-brand-primary/10 transition-colors">07</div>
                         </div>
@@ -1057,10 +1065,10 @@
 
     <!-- Why Choose Elvora -->
     <section class="py-32 bg-white dark:bg-brand-surfaceDark border-b border-brand-borderLight dark:border-white/5 relative overflow-hidden">
-        <div class="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
+        <div class="max-w-[1400px] w-full mx-auto px-4 relative z-10">
             <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
                 <span class="text-brand-secondary font-bold text-xs uppercase tracking-[0.4em] block">Benefits</span>
-                <h2 class="font-display font-extrabold text-4xl md:text-5xl text-brand-primary dark:text-white tracking-tight">Why Choose Elvora</h2>
+                <h2 class="font-display font-extrabold text-fluid-3xl lg:text-fluid-4xl text-brand-primary dark:text-white tracking-tight">Why Choose Elvora</h2>
                 <p class="text-brand-textMuted dark:text-slate-400 text-lg font-medium">Why people work with us to build and grow their ideas.</p>
             </div>
 
@@ -1069,9 +1077,7 @@
                 <div class="bg-slate-50 dark:bg-white/[0.02] border border-slate-100 dark:border-white/[0.05] rounded-[2rem] p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:border-brand-secondary/30 relative overflow-hidden group">
                     <div class="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-brand-secondary/5 dark:bg-brand-secondary/2 filter blur-xl group-hover:scale-150 group-hover:bg-brand-secondary/10 dark:group-hover:bg-brand-secondary/5 transition-all duration-700"></div>
                     <div class="w-12 h-12 rounded-2xl bg-brand-primary/5 dark:bg-white/5 text-brand-primary dark:text-white flex items-center justify-center mb-6 group-hover:bg-brand-secondary group-hover:text-white transition-all duration-300">
-                        <span class="material-symbols-outlined transition-transform duration-500 group-hover:scale-110">
-                            groups
-                        </span>
+                        <x-lucide-users class="w-6 h-6" />
                     </div>
                     <h3 class="font-display font-bold text-lg text-brand-primary dark:text-white group-hover:text-brand-secondary transition-colors duration-300">People-First Thinking</h3>
                     <p class="text-brand-textMuted dark:text-slate-400 text-sm mt-3 leading-relaxed font-medium">We focus on solving your problems, not just writing code.</p>
@@ -1082,9 +1088,7 @@
                 <div class="bg-slate-50 dark:bg-white/[0.02] border border-slate-100 dark:border-white/[0.05] rounded-[2rem] p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:border-brand-secondary/30 relative overflow-hidden group">
                     <div class="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-brand-secondary/5 dark:bg-brand-secondary/2 filter blur-xl group-hover:scale-150 group-hover:bg-brand-secondary/10 dark:group-hover:bg-brand-secondary/5 transition-all duration-700"></div>
                     <div class="w-12 h-12 rounded-2xl bg-brand-primary/5 dark:bg-white/5 text-brand-primary dark:text-white flex items-center justify-center mb-6 group-hover:bg-brand-secondary group-hover:text-white transition-all duration-300">
-                        <span class="material-symbols-outlined transition-transform duration-500 group-hover:scale-110">
-                            route
-                        </span>
+                        <x-lucide-infinity class="w-6 h-6" />
                     </div>
                     <h3 class="font-display font-bold text-lg text-brand-primary dark:text-white group-hover:text-brand-secondary transition-colors duration-300">Help from Start to Finish</h3>
                     <p class="text-brand-textMuted dark:text-slate-400 text-sm mt-3 leading-relaxed font-medium">We stay with you from your first idea until long after launch.</p>
@@ -1095,9 +1099,7 @@
                 <div class="bg-slate-50 dark:bg-white/[0.02] border border-slate-100 dark:border-white/[0.05] rounded-[2rem] p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:border-brand-secondary/30 relative overflow-hidden group">
                     <div class="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-brand-secondary/5 dark:bg-brand-secondary/2 filter blur-xl group-hover:scale-150 group-hover:bg-brand-secondary/10 dark:group-hover:bg-brand-secondary/5 transition-all duration-700"></div>
                     <div class="w-12 h-12 rounded-2xl bg-brand-primary/5 dark:bg-white/5 text-brand-primary dark:text-white flex items-center justify-center mb-6 group-hover:bg-brand-secondary group-hover:text-white transition-all duration-300">
-                        <span class="material-symbols-outlined transition-transform duration-500 group-hover:scale-110">
-                            track_changes
-                        </span>
+                        <x-lucide-target class="w-6 h-6" />
                     </div>
                     <h3 class="font-display font-bold text-lg text-brand-primary dark:text-white group-hover:text-brand-secondary transition-colors duration-300">Goal-Focused Approach</h3>
                     <p class="text-brand-textMuted dark:text-slate-400 text-sm mt-3 leading-relaxed font-medium">Every tool we use is chosen to help you reach your goals.</p>
@@ -1108,9 +1110,7 @@
                 <div class="bg-slate-50 dark:bg-white/[0.02] border border-slate-100 dark:border-white/[0.05] rounded-[2rem] p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:border-brand-secondary/30 relative overflow-hidden group">
                     <div class="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-brand-secondary/5 dark:bg-brand-secondary/2 filter blur-xl group-hover:scale-150 group-hover:bg-brand-secondary/10 dark:group-hover:bg-brand-secondary/5 transition-all duration-700"></div>
                     <div class="w-12 h-12 rounded-2xl bg-brand-primary/5 dark:bg-white/5 text-brand-primary dark:text-white flex items-center justify-center mb-6 group-hover:bg-brand-secondary group-hover:text-white transition-all duration-300">
-                        <span class="material-symbols-outlined transition-transform duration-500 group-hover:scale-110">
-                            forum
-                        </span>
+                        <x-lucide-handshake class="w-6 h-6" />
                     </div>
                     <h3 class="font-display font-bold text-lg text-brand-primary dark:text-white group-hover:text-brand-secondary transition-colors duration-300">Working Together</h3>
                     <p class="text-brand-textMuted dark:text-slate-400 text-sm mt-3 leading-relaxed font-medium">Fast, easy talk and regular updates to keep things moving.</p>
@@ -1120,99 +1120,51 @@
         </div>
     </section>
 
-    <!-- Call To Action (High-End & Dynamic) -->
-    <section x-data="{ 
-                 visible: false,
-                 mouseX: 0,
-                 mouseY: 0,
-                 handleMouseMove(e) {
-                     let rect = $el.getBoundingClientRect();
-                     this.mouseX = ((e.clientX - rect.left) / rect.width) * 100;
-                     this.mouseY = ((e.clientY - rect.top) / rect.height) * 100;
-                 }
-             }"
-             x-init="
-                new IntersectionObserver(([entry]) => { if(entry.isIntersecting) visible = true; }, { threshold: 0.2 }).observe($el);
-             "
-             @mousemove="handleMouseMove($event)"
-             class="py-40 md:py-52 bg-[#020617] text-white text-center relative overflow-hidden group/cta">
+    <!-- Call To Action (Simple & Elegant with Background) -->
+    <section x-data="{ visible: false }"
+             x-init="new IntersectionObserver(([entry]) => { if(entry.isIntersecting) visible = true; }, { threshold: 0.2 }).observe($el);"
+             class="py-28 md:py-36 bg-[#020617] text-white text-center relative overflow-hidden group/cta border-t border-white/5">
         
-        <!-- Premium Animated Background -->
+        <!-- Background Image & Vignette -->
         <div class="absolute inset-0 z-0 overflow-hidden">
-            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 scale-110 opacity-20 mix-blend-luminosity will-change-transform"
-                 :style="`transform: translate(${(mouseX - 50) * 0.015}px, ${(mouseY - 50) * 0.015}px) scale(1.1)`"
-                 style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80')">
+            <div class="absolute inset-0 bg-cover bg-center opacity-15 mix-blend-luminosity scale-105 transition-transform duration-[10000ms] ease-out group-hover/cta:scale-110"
+                 style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop')">
             </div>
-            
-            <!-- Interactive Shimmer Glow -->
-            <div class="absolute inset-0 opacity-40 transition-opacity duration-1000 pointer-events-none"
-                 :style="`background: radial-gradient(circle at ${mouseX}% ${mouseY}%, rgba(204, 153, 51, 0.15) 0%, transparent 50%)`"></div>
-            
-            <!-- Slow Moving Grid Overlay -->
-            <div class="absolute inset-0 opacity-[0.03] grid-dots scale-150 pointer-events-none animate-[shimmer_20s_linear_infinite]"></div>
-            
-            <!-- Top/Bottom Vignettes -->
+            <!-- Dynamic radial glow overlay -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(204,153,51,0.08)_0%,transparent_70%)] pointer-events-none"></div>
+            <!-- Grid dots -->
+            <div class="absolute inset-0 opacity-[0.02] grid-dots pointer-events-none"></div>
+            <!-- Vignettes -->
             <div class="absolute inset-0 bg-gradient-to-b from-[#020617] via-transparent to-[#020617]"></div>
         </div>
 
-        <!-- Floating Glassmorphism Content Card -->
-        <div class="relative z-10 max-w-4xl mx-auto px-6">
-            <div class="bg-white/[0.03] backdrop-blur-2xl border border-white/[0.08] rounded-[3.5rem] p-12 md:p-20 shadow-2xl transition-all duration-1000 transform"
-                 :class="visible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'">
-                
-                <div class="space-y-8">
-                    <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-brand-secondary/10 border border-brand-secondary/20 transition-all duration-700"
-                          :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'">
-                        <span class="w-1.5 h-1.5 rounded-full bg-brand-secondary animate-pulse"></span>
-                        <span class="text-[9px] font-black uppercase tracking-[0.4em] text-brand-secondary">Start Your Legacy</span>
-                    </div>
-                    
-                    <h2 class="font-display font-black text-4xl md:text-6xl lg:text-7xl tracking-tighter leading-[1] transition-all duration-1000 delay-200 transform"
-                        :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
-                        Ready to build your <br/>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-secondary to-white animate-gradient-x italic">next big idea?</span>
-                    </h2>
-                    
-                    <p class="text-slate-400 text-base md:text-xl max-w-xl mx-auto transition-all duration-1000 delay-400 transform"
-                       :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
-                        Partner with Elvora to transform your vision into a high-performance digital product.
-                    </p>
+        <div class="relative z-10 max-w-3xl mx-auto px-6 space-y-6 transition-all duration-1000 transform"
+             :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
+            
+            <h2 class="font-display font-black text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight">
+                Let's build something <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-secondary via-white to-brand-secondary italic font-medium">extraordinary</span>
+            </h2>
+            
+            <p class="text-slate-400 text-sm md:text-base max-w-lg mx-auto leading-relaxed">
+                Partner with Elvora to design and build custom, high-performance digital products that drive growth and scale.
+            </p>
 
-                    <div class="pt-6 transition-all duration-1000 delay-600 transform"
-                         :class="visible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'">
-                        <a href="{{ route('project') }}" 
-                           class="relative inline-flex items-center gap-4 px-12 py-6 bg-white text-slate-950 font-black text-base rounded-full shadow-[0_20px_50px_rgba(255,255,255,0.1)] transition-all duration-500 hover:scale-105 hover:shadow-[0_30px_70px_rgba(255,255,255,0.2)] active:scale-95 group/btn overflow-hidden">
-                            <span class="relative z-10">Start Your Project Today</span>
-                            <span class="material-symbols-outlined relative z-10 transition-transform duration-500 group-hover/btn:translate-x-2">arrow_forward</span>
-                            
-                            <!-- Button Shine -->
-                            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-slate-900/5 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]"></div>
-                        </a>
-                    </div>
-                </div>
+            <!-- Dual CTAs -->
+            <div class="flex flex-wrap justify-center items-center gap-4 pt-4">
+                <a href="{{ route('project') }}" 
+                   class="group inline-flex items-center gap-2.5 px-8 py-3.5 bg-brand-secondary hover:bg-white text-[#020617] font-bold text-xs rounded-full shadow-lg transition-all duration-300 hover:scale-105 active:scale-95">
+                    <span>Start Your Project</span>
+                    
+                </a>
 
-                <!-- Trusted Badges Footer -->
-                <div class="mt-16 flex flex-wrap justify-center items-center gap-6 md:gap-10 opacity-30 grayscale hover:opacity-60 hover:grayscale-0 transition-all duration-1000">
-                    <div class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-sm">verified_user</span>
-                        <span class="text-[9px] font-bold uppercase tracking-widest">Trusted Engineering</span>
-                    </div>
-                    <div class="h-1 w-1 bg-white/20 rounded-full"></div>
-                    <div class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-sm">public</span>
-                        <span class="text-[9px] font-bold uppercase tracking-widest">Global Standards</span>
-                    </div>
-                    <div class="h-1 w-1 bg-white/20 rounded-full"></div>
-                    <div class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-sm">speed</span>
-                        <span class="text-[9px] font-bold uppercase tracking-widest">Rapid Delivery</span>
-                    </div>
-                </div>
+                <a href="{{ route('contact') }}" 
+                   class="group inline-flex items-center gap-2.5 px-8 py-3.5 border border-white/10 hover:border-white bg-white/5 hover:bg-white hover:text-[#020617] text-white font-bold text-xs rounded-full transition-all duration-300 hover:scale-105 active:scale-95">
+                    <span>Book a Consultation</span>
+                    
+                </a>
             </div>
         </div>
-
-        <!-- Dynamic Decorative Orbs -->
-        <div class="absolute -left-40 top-1/2 w-[600px] h-[600px] bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none animate-float-slow"></div>
-        <div class="absolute -right-40 bottom-0 w-[500px] h-[500px] bg-brand-secondary/5 rounded-full blur-[100px] pointer-events-none animate-float-slow delay-700"></div>
     </section>
 @endsection
+
+

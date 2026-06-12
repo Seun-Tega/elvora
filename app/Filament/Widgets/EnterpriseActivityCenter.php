@@ -9,7 +9,7 @@ use Filament\Widgets\Widget;
 
 class EnterpriseActivityCenter extends Widget
 {
-    protected string $view = 'filament.widgets.enterprise-activity-center';
+    protected static string $view = 'filament.widgets.enterprise-activity-center';
 
     protected static ?int $sort = 4;
 

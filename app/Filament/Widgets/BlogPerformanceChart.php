@@ -7,7 +7,7 @@ use Filament\Widgets\ChartWidget;
 
 class BlogPerformanceChart extends ChartWidget
 {
-    protected ?string $heading = 'Blog Performance';
+    protected static ?string $heading = 'Blog Performance';
 
     protected static ?int $sort = 3;
 

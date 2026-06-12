@@ -3,15 +3,15 @@
 namespace App\Filament\Resources\Categories\Schemas;
 
 use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Schema;
+use Filament\Forms\Form;
 use Illuminate\Support\Str;
 
 class CategoryForm
 {
-    public static function configure(Schema $schema): Schema
+    public static function configure(Form $form): Form
     {
-        return $schema
-            ->components([
+        return $form
+            ->schema([
                 TextInput::make('name')
                     ->required()
                     ->live(onBlur: true)
