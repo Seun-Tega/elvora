@@ -19,10 +19,10 @@ class OperationsHealth extends Widget
     {
         return [
             'systems' => [
-                ['name' => 'CMS Publishing', 'status' => 'Operational', 'score' => 98, 'detail' => Blog::count() . ' content records indexed'],
-                ['name' => 'Lead Intake', 'status' => 'Operational', 'score' => 96, 'detail' => ContactMessage::count() + ProjectRequest::count() . ' total leads'],
-                ['name' => 'Project Pipeline', 'status' => 'Monitored', 'score' => 91, 'detail' => ProjectRequest::whereNotIn('status', ['won', 'lost', 'closed'])->count() . ' open opportunities'],
-                ['name' => 'Notifications', 'status' => 'Ready', 'score' => 88, 'detail' => 'Database notifications enabled'],
+                ['name' => 'Content Manager', 'status' => 'Healthy', 'score' => 98, 'detail' => Blog::count() . ' stories published and ready'],
+                ['name' => 'Inquiry System', 'status' => 'Active', 'score' => 96, 'detail' => ContactMessage::count() + ProjectRequest::count() . ' total inquiries received'],
+                ['name' => 'Project Tracker', 'status' => 'Monitoring', 'score' => 91, 'detail' => ProjectRequest::whereNotIn('status', ['won', 'lost', 'closed'])->count() . ' projects being tracked'],
+                ['name' => 'System Alerts', 'status' => 'Ready', 'score' => 88, 'detail' => 'Automatic alerts are active'],
             ],
         ];
     }

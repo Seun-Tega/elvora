@@ -7,7 +7,7 @@ use Filament\Widgets\ChartWidget;
 
 class LeadFunnelChart extends ChartWidget
 {
-    protected ?string $heading = 'Lead Funnel Breakdown';
+    protected ?string $heading = 'Inquiry Status Breakdown';
     
     protected static ?int $sort = 1;
 
@@ -27,7 +27,7 @@ class LeadFunnelChart extends ChartWidget
         return [
             'datasets' => [
                 [
-                    'label' => 'Leads',
+                    'label' => 'Inquiries',
                     'data' => $counts,
                     'backgroundColor' => [
                         '#2563eb',

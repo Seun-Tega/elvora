@@ -34,7 +34,7 @@
                     We design automated inventory tools and distribution platforms to transform standard supply chains into responsive assets.
                 </p>
                 <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="{{ route('project') }}" class="bg-brand-secondary hover:bg-brand-secondaryDark text-white px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:scale-[1.02] transition-transform">
+                    <a href="{{ route('project') }}" class="bg-brand-secondary hover:bg-brand-secondaryDark text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 hover:scale-[1.02] transition-transform">
                         <span>Deploy Infrastructure</span>
                         <span class="material-symbols-outlined text-sm">arrow_forward</span>
                     </a>
@@ -145,7 +145,7 @@
                         <h3 class="font-display font-bold text-xl text-white">Network Coordination</h3>
                         <p class="text-blue-100 text-sm leading-relaxed">Continuous analysis that flags potential transport bottlenecks before they impact your fulfillment.</p>
                     </div>
-                    <a href="{{ route('project') }}" class="bg-white text-brand-primary px-6 py-2.5 rounded-xl font-bold w-fit mt-6 text-xs hover:bg-slate-50 transition-colors">
+                    <a href="{{ route('project') }}" class="bg-white text-brand-primary px-4 py-2 rounded-xl font-bold w-fit mt-6 text-xs hover:bg-slate-50 transition-colors">
                         Request Consultation
                     </a>
                 </div>

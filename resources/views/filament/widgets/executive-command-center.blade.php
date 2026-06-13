@@ -5,15 +5,15 @@
             <!-- Command Center Hero (Stripe-style gradient card) -->
             <div class="lg:col-span-2 elvora-command-hero rounded-xl p-6 flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:shadow-premium-hover">
                 <div class="space-y-3 z-10">
-                    <p class="elvora-eyebrow text-xs font-bold tracking-wider text-[#CC9933] uppercase">Operational Hub</p>
-                    <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-tight">Elvora Command Center</h2>
+                    <p class="elvora-eyebrow text-xs font-bold tracking-wider text-[#CC9933] uppercase">Business Summary</p>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-tight">Success Overview</h2>
                     <p class="text-sm text-slate-300 max-w-xl">
-                        Operational metrics, workflow pipelines, and system telemetry.
+                        Manage your growth, track inquiries, and view your site's health.
                     </p>
                 </div>
                 <div class="flex items-center gap-3 mt-6 z-10">
                     <x-filament::button href="{{ \App\Filament\Resources\ProjectRequests\ProjectRequestResource::getUrl('index') }}" tag="a" icon="heroicon-m-briefcase" class="shadow-sm">
-                        Pipeline
+                        Inquiries
                     </x-filament::button>
                     <x-filament::button href="{{ \App\Filament\Resources\Blogs\BlogResource::getUrl('create') }}" tag="a" icon="heroicon-m-pencil-square" color="gray" class="shadow-sm" outlined>
                         Write Post
@@ -25,8 +25,8 @@
             <div class="elvora-health-card rounded-xl p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between hover:shadow-premium-hover transition-all">
                 <div class="flex justify-between items-start">
                     <div>
-                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">System Telemetry</span>
-                        <h3 class="text-slate-900 dark:text-white font-bold text-lg mt-1">Company Health</h3>
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Activity Level</span>
+                        <h3 class="text-slate-900 dark:text-white font-bold text-lg mt-1">Overall Progress</h3>
                     </div>
                     <div class="p-2 rounded-lg bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400">
                         <x-filament::icon icon="heroicon-m-bolt" class="h-5 w-5" />
@@ -42,7 +42,7 @@
                     <div class="elvora-meter"><i style="width: {{ $healthScore }}%"></i></div>
                 </div>
                 <p class="text-xs text-slate-500 dark:text-slate-400">
-                    Overall health of content growth, security, and pipeline activity.
+                    A summary of your website's performance and activity.
                 </p>
             </div>
         </div>
@@ -52,7 +52,7 @@
             <!-- Pipeline Value -->
             <div class="elvora-command-metrics bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:shadow-premium-hover transition-all">
                 <div class="flex justify-between items-center mb-2">
-                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Pipeline Value</span>
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Estimated Value</span>
                     <x-filament::icon icon="heroicon-m-currency-dollar" class="h-5 w-5 text-slate-400 dark:text-slate-500" />
                 </div>
                 <div class="flex items-baseline justify-between">
@@ -64,7 +64,7 @@
             <!-- Open Opportunities -->
             <div class="elvora-command-metrics bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:shadow-premium-hover transition-all">
                 <div class="flex justify-between items-center mb-2">
-                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Open Pipeline</span>
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Active Inquiries</span>
                     <x-filament::icon icon="heroicon-m-folder-open" class="h-5 w-5 text-slate-400 dark:text-slate-500" />
                 </div>
                 <div class="flex items-baseline justify-between">
@@ -76,7 +76,7 @@
             <!-- Lead Velocity -->
             <div class="elvora-command-metrics bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:shadow-premium-hover transition-all">
                 <div class="flex justify-between items-center mb-2">
-                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Lead Velocity</span>
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Growth Pace</span>
                     <x-filament::icon icon="heroicon-m-chart-bar-square" class="h-5 w-5 text-slate-400 dark:text-slate-500" />
                 </div>
                 <div class="flex items-baseline justify-between">
@@ -88,7 +88,7 @@
             <!-- Audience Growth -->
             <div class="elvora-command-metrics bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:shadow-premium-hover transition-all">
                 <div class="flex justify-between items-center mb-2">
-                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Audience</span>
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Community</span>
                     <x-filament::icon icon="heroicon-m-users" class="h-5 w-5 text-slate-400 dark:text-slate-500" />
                 </div>
                 <div class="flex items-baseline justify-between">
@@ -102,7 +102,7 @@
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:shadow-premium-hover transition-all">
             <div class="flex items-center gap-2 mb-3">
                 <x-filament::icon icon="heroicon-m-clipboard-document-check" class="h-5 w-5 text-[#CC9933]" />
-                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Core Priorities for Today</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Your To-Do List</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                 @foreach ($priorities as $index => $priority)

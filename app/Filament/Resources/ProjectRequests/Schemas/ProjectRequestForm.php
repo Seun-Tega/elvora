@@ -16,8 +16,8 @@ class ProjectRequestForm
     {
         return $schema
             ->components([
-                // Pipeline controls — full width, always at the top
-                Section::make('Pipeline Control')
+                // Project progress controls — full width, always at the top
+                Section::make('Project Progress')
                     ->icon('heroicon-m-adjustments-vertical')
                     ->compact()
                     ->columnSpanFull()

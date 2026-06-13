@@ -45,7 +45,7 @@
             </div>
             <div class="flex items-center gap-2">
                 <div class="h-0.5 w-8 bg-[#CC9933]"></div>
-                <span class="text-[10px] font-bold uppercase tracking-widest text-[#CC9933]">Admin Command Center</span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-[#CC9933]">Admin Dashboard</span>
             </div>
         </div>
         <div class="absolute inset-0 pointer-events-none opacity-20" style="background-image: radial-gradient(#ffffff 0.5px, transparent 0.5px); background-size: 24px 24px;"></div>

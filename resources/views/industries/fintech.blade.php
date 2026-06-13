@@ -35,7 +35,7 @@
                     We build high-capacity payment pathways, unified digital banking platforms, and secure transaction systems for global organizations.
                 </p>
                 <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="{{ route('project') }}" class="bg-brand-secondary hover:bg-brand-secondaryDark text-white px-8 py-4 rounded-xl font-bold shadow-premium hover:shadow-premiumHover hover:scale-[1.02] transition-all">
+                    <a href="{{ route('project') }}" class="bg-brand-secondary hover:bg-brand-secondaryDark text-white px-6 py-3 rounded-xl font-bold shadow-premium hover:shadow-premiumHover hover:scale-[1.02] transition-all">
                         Consult Our Specialists
                     </a>
                 </div>
@@ -192,7 +192,7 @@
             <h2 class="font-display font-extrabold text-3xl text-brand-primary dark:text-white">Ready to build your fintech digital legacy?</h2>
             <p class="text-brand-textMuted dark:text-slate-400 text-base">Our team of experienced financial consultants and system architects is ready to design your next solution.</p>
             <div class="pt-4">
-                <a href="{{ route('project') }}" class="inline-flex px-8 py-4 bg-brand-primary hover:bg-brand-primaryDark text-white font-bold rounded-xl shadow-premium hover:shadow-premiumHover hover:scale-[1.02] transition-all">
+                <a href="{{ route('project') }}" class="inline-flex px-6 py-3 bg-brand-primary hover:bg-brand-primaryDark text-white font-bold rounded-xl shadow-premium hover:shadow-premiumHover hover:scale-[1.02] transition-all">
                     Consult With Our Team
                 </a>
             </div>

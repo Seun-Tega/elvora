@@ -4,9 +4,9 @@
             <div>
                 <div class="flex items-center gap-2">
                     <x-filament::icon icon="heroicon-m-bolt" class="h-5 w-5 text-[#CC9933]" />
-                    <h3 class="text-sm font-bold text-slate-900 dark:text-white">Quick Actions</h3>
+                    <h3 class="text-sm font-bold text-slate-900 dark:text-white">Common Tasks</h3>
                 </div>
-                <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Shortcuts for CRM, CMS, and settings control.</p>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Quickly create content or manage your settings.</p>
             </div>
             <div class="flex flex-wrap items-center gap-2">
                 <x-filament::button

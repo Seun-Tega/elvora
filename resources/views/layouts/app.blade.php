@@ -14,8 +14,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- Google Fonts: Outfit & Inter & JetBrains Mono -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <!-- Google Fonts: Outfit & Inter & JetBrains Mono & Lora -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 
     <!-- Vite (Auto-Refresh & HMR) -->
@@ -127,7 +127,7 @@
                     <span class="material-symbols-outlined text-[20px] hidden dark:block">light_mode</span>
                 </button>
 
-                <a href="{{ route('project') }}" class="relative group overflow-hidden bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary px-6 py-2.5 rounded-full text-xs font-black shadow-premium hover:shadow-premiumHover transition-all hover:scale-[1.05] active:scale-95">
+                <a href="{{ route('project') }}" class="relative group overflow-hidden bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary px-4 py-2 rounded-full text-xs font-black shadow-premium hover:shadow-premiumHover transition-all hover:scale-[1.05] active:scale-95">
                     <span class="relative z-10">Start a Project</span>
                     <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                 </a>
@@ -150,16 +150,16 @@
              class="lg:hidden absolute left-4 right-4 mt-4 bg-white/95 dark:bg-brand-primaryDark/95 backdrop-blur-xl border border-brand-borderLight dark:border-white/10 rounded-[2rem] shadow-premiumHover p-8 space-y-6 z-50"
              style="display: none;">
             <div class="grid gap-2">
-                <a href="{{ route('about') }}" class="text-2xl font-black text-brand-primary dark:text-white hover:text-brand-secondary transition-colors">About</a>
-                <a href="{{ route('services') }}" class="text-2xl font-black text-brand-primary dark:text-white hover:text-brand-secondary transition-colors">Services</a>
-                <a href="{{ route('blog') }}" class="text-2xl font-black text-brand-primary dark:text-white hover:text-brand-secondary transition-colors">Blog</a>
-                <a href="{{ route('contact') }}" class="text-2xl font-black text-brand-primary dark:text-white hover:text-brand-secondary transition-colors">Contact</a>
+                <a href="{{ route('about') }}" class="text-xl font-black py-2 transition-all text-brand-primary dark:text-white hover:text-brand-secondary">About</a>
+                <a href="{{ route('services') }}" class="text-xl font-black py-2 transition-all text-brand-primary dark:text-white hover:text-brand-secondary">Services</a>
+                <a href="{{ route('blog') }}" class="text-xl font-black py-2 transition-all text-brand-primary dark:text-white hover:text-brand-secondary">Blog</a>
+                <a href="{{ route('contact') }}" class="text-xl font-black py-2 transition-all text-brand-primary dark:text-white hover:text-brand-secondary">Contact</a>
             </div>
             
             <hr class="border-brand-borderLight dark:border-white/5">
             
             <div class="flex flex-col gap-4">
-                <a href="{{ route('project') }}" class="w-full py-4 bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary rounded-2xl text-center font-black text-lg shadow-premium">
+                <a href="{{ route('project') }}" class="w-full py-3 bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary hover:bg-brand-secondary hover:text-brand-primary dark:hover:bg-white dark:hover:text-brand-primary rounded-2xl text-center font-black text-lg shadow-premium transition-all">
                     Start a Project
                 </a>
                 <button class="theme-toggle-btn w-full py-3 flex items-center justify-center gap-3 border border-brand-borderLight dark:border-white/10 rounded-2xl text-brand-textMuted dark:text-slate-400 font-bold">

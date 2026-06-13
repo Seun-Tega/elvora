@@ -212,11 +212,11 @@
                     <!-- Spacer -->
                     <span x-show="step === 1"></span>
 
-                    <button type="button" @click="nextStep()" x-show="step < 3" class="bg-brand-primary text-white hover:bg-brand-primaryDark px-6 py-3 rounded-xl text-xs font-bold transition-all flex items-center gap-1">
+                    <button type="button" @click="nextStep()" x-show="step < 3" class="bg-brand-primary text-white hover:bg-brand-primaryDark px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1">
                         Continue <span class="material-symbols-outlined text-sm">arrow_forward</span>
                     </button>
 
-                    <button type="button" @click="submitForm()" x-show="step === 3" :disabled="isSubmitting" class="bg-brand-primary text-white hover:bg-brand-primaryDark px-6 py-3 rounded-xl text-xs font-bold transition-all flex items-center gap-2">
+                    <button type="button" @click="submitForm()" x-show="step === 3" :disabled="isSubmitting" class="bg-brand-primary text-white hover:bg-brand-primaryDark px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2">
                         <span x-text="isSubmitting ? 'Sending...' : 'Let\'s Build Together'">Let's Build Together</span>
                         <span class="material-symbols-outlined text-sm" x-show="!isSubmitting">handshake</span>
                     </button>

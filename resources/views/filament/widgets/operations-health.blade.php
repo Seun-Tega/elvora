@@ -5,12 +5,12 @@
             <div class="flex items-center gap-2">
                 <x-filament::icon icon="heroicon-m-server" class="h-5 w-5 text-[#CC9933]" />
                 <div>
-                    <h3 class="text-sm font-bold text-slate-900 dark:text-white">Operational Health</h3>
-                    <p class="text-[11px] text-slate-500 dark:text-slate-400">System telemetry, database operations, and application status.</p>
+                    <h3 class="text-sm font-bold text-slate-900 dark:text-white">System Status</h3>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400">Monitoring the health and performance of your platform.</p>
                 </div>
             </div>
             <x-filament::button href="{{ \App\Filament\Pages\SystemCenter::getUrl() }}" tag="a" icon="heroicon-m-circle-stack" color="gray" size="xs" outlined>
-                System Center
+                Advanced Settings
             </x-filament::button>
         </div>
 

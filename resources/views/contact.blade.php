@@ -131,7 +131,7 @@
                         <span class="text-[10px] text-red-500 font-semibold mt-1 block" x-show="errors.message" x-text="errors.message" style="display: none;"></span>
                     </div>
 
-                    <button type="submit" :disabled="isSubmitting" class="w-full bg-brand-primary text-white hover:bg-brand-primaryDark py-3.5 rounded-xl font-bold flex items-center justify-center space-x-2 transition-all active:scale-95 shadow-sm">
+                    <button type="submit" :disabled="isSubmitting" class="w-full bg-brand-primary text-white hover:bg-brand-primaryDark py-2.5 rounded-xl font-bold flex items-center justify-center space-x-2 transition-all active:scale-95 shadow-sm">
                         <span x-text="isSubmitting ? 'Sending...' : 'Send Message'">Send Message</span>
                         <span class="material-symbols-outlined text-sm" x-show="!isSubmitting">send</span>
                     </button>

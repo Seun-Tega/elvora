@@ -30,7 +30,7 @@
                     Deploying secure cloud configurations, core database migrations, and verified access networks for global enterprises and institutional clients.
                 </p>
                 <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="{{ route('project') }}" class="bg-brand-primary hover:bg-brand-primaryDark text-white px-8 py-4 rounded-xl font-bold shadow-premium hover:shadow-premiumHover hover:scale-[1.02] transition-all">
+                    <a href="{{ route('project') }}" class="bg-brand-primary hover:bg-brand-primaryDark text-white px-6 py-3 rounded-xl font-bold shadow-premium hover:shadow-premiumHover hover:scale-[1.02] transition-all">
                         Consult Our Specialists
                     </a>
                 </div>
@@ -162,7 +162,7 @@
                 Engage our specialists today to structure reliable and compliant digital assets.
             </p>
             <div class="pt-4">
-                <a href="{{ route('project') }}" class="inline-flex px-8 py-4 bg-brand-primary hover:bg-brand-primaryDark text-white font-bold rounded-xl shadow-premium hover:shadow-premiumHover hover:scale-[1.02] transition-all">
+                <a href="{{ route('project') }}" class="inline-flex px-6 py-3 bg-brand-primary hover:bg-brand-primaryDark text-white font-bold rounded-xl shadow-premium hover:shadow-premiumHover hover:scale-[1.02] transition-all">
                     Consult Our Specialists
                 </a>
             </div>

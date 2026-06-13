@@ -1135,13 +1135,13 @@
                 new IntersectionObserver(([entry]) => { if(entry.isIntersecting) visible = true; }, { threshold: 0.2 }).observe($el);
              "
              @mousemove="handleMouseMove($event)"
-             class="py-40 md:py-52 bg-[#020617] text-white text-center relative overflow-hidden group/cta">
+             class="py-32 md:py-44 bg-[#020617] text-white text-center relative overflow-hidden group/cta">
         
         <!-- Premium Animated Background -->
         <div class="absolute inset-0 z-0 overflow-hidden">
-            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 scale-110 opacity-20 mix-blend-luminosity will-change-transform"
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 scale-110 opacity-40 will-change-transform"
                  :style="`transform: translate(${(mouseX - 50) * 0.015}px, ${(mouseY - 50) * 0.015}px) scale(1.1)`"
-                 style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80')">
+                 style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop')">
             </div>
             
             <!-- Interactive Shimmer Glow -->
@@ -1151,29 +1151,29 @@
             <!-- Slow Moving Grid Overlay -->
             <div class="absolute inset-0 opacity-[0.03] grid-dots scale-150 pointer-events-none animate-[shimmer_20s_linear_infinite]"></div>
             
-            <!-- Top/Bottom Vignettes -->
-            <div class="absolute inset-0 bg-gradient-to-b from-[#020617] via-transparent to-[#020617]"></div>
+            <!-- Top/Bottom Vignettes & Dark Overlay for Text Contrast -->
+            <div class="absolute inset-0 bg-gradient-to-b from-[#020617] via-[#020617]/40 to-[#020617]"></div>
         </div>
 
         <!-- Floating Glassmorphism Content Card -->
-        <div class="relative z-10 max-w-4xl mx-auto px-6">
-            <div class="bg-white/[0.03] backdrop-blur-2xl border border-white/[0.08] rounded-[3.5rem] p-12 md:p-20 shadow-2xl transition-all duration-1000 transform"
+        <div class="relative z-5 max-w-4xl mx-auto px-6">
+            <div class="transition-all duration-1000 transform"
                  :class="visible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'">
                 
-                <div class="space-y-8">
-                    <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-brand-secondary/10 border border-brand-secondary/20 transition-all duration-700"
+                <div class="space-y-1">
+                    <div class="inline-flex items-center gap-2.5 px-3.5 py-1 rounded-full bg-brand-secondary/10 border border-brand-secondary/20 transition-all duration-700"
                           :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'">
                         <span class="w-1.5 h-1.5 rounded-full bg-brand-secondary animate-pulse"></span>
                         <span class="text-[9px] font-black uppercase tracking-[0.4em] text-brand-secondary">Start Your Legacy</span>
                     </div>
                     
-                    <h2 class="font-display font-black text-4xl md:text-6xl lg:text-7xl tracking-tighter leading-[1] transition-all duration-1000 delay-200 transform"
+                    <h2 class="font-display font-black text-4xl md:text-6xl lg:text-7xl tracking-tighter leading-[1.1] transition-all duration-1000 delay-200 transform"
                         :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
                         Ready to build your <br/>
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-secondary to-white animate-gradient-x italic">next big idea?</span>
                     </h2>
                     
-                    <p class="text-slate-400 text-base md:text-xl max-w-xl mx-auto transition-all duration-1000 delay-400 transform"
+                    <p class="text-slate-300/90 text-sm md:text-lg max-w-2xl mx-auto transition-all duration-1000 delay-400 transform"
                        :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
                         Partner with Elvora to transform your vision into a high-performance digital product.
                     </p>
@@ -1181,7 +1181,7 @@
                     <div class="pt-6 transition-all duration-1000 delay-600 transform"
                          :class="visible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'">
                         <a href="{{ route('project') }}" 
-                           class="relative inline-flex items-center gap-4 px-12 py-6 bg-white text-slate-950 font-black text-base rounded-full shadow-[0_20px_50px_rgba(255,255,255,0.1)] transition-all duration-500 hover:scale-105 hover:shadow-[0_30px_70px_rgba(255,255,255,0.2)] active:scale-95 group/btn overflow-hidden">
+                           class="relative inline-flex items-center gap-3 px-8 py-3.5 bg-white text-slate-950 font-bold text-sm tracking-wide rounded-full shadow-[0_20px_50px_rgba(255,255,255,0.1)] transition-all duration-500 hover:scale-105 hover:shadow-[0_30px_70px_rgba(255,255,255,0.2)] active:scale-95 group/btn overflow-hidden">
                             <span class="relative z-10">Start Your Project Today</span>
                             <span class="material-symbols-outlined relative z-10 transition-transform duration-500 group-hover/btn:translate-x-2">arrow_forward</span>
                             

@@ -35,43 +35,43 @@ class StatsOverview extends StatsOverviewWidget
         $conversionTrend = [8, 11, 10, 14, 16, 19, 23];
 
         return [
-            Stat::make('Total Leads', number_format($totalLeads))
-                ->description('Contact and project inquiries')
+            Stat::make('New Inquiries', number_format($totalLeads))
+                ->description('People reaching out to you')
                 ->descriptionIcon('heroicon-m-arrow-trending-up')
                 ->chart($leadsTrend)
                 ->color('primary'),
-            Stat::make('Total Projects', number_format($projectCount))
-                ->description('Project requests in CRM')
+            Stat::make('Project Requests', number_format($projectCount))
+                ->description('Potential new projects')
                 ->descriptionIcon('heroicon-m-presentation-chart-line')
                 ->chart($projectTrend)
                 ->color('success'),
-            Stat::make('Conversion Rate', $conversionRate . '%')
-                ->description($wonProjects . ' won / qualified opportunities')
+            Stat::make('Success Rate', $conversionRate . '%')
+                ->description($wonProjects . ' projects won or qualified')
                 ->descriptionIcon('heroicon-m-chart-pie')
                 ->chart($conversionTrend)
                 ->color('warning'),
-            Stat::make('Visitors', number_format(max($totalLeads * 38, 1240)))
-                ->description('Modeled monthly traffic signal')
+            Stat::make('Site Visitors', number_format(max($totalLeads * 38, 1240)))
+                ->description('Estimated people visiting your site')
                 ->descriptionIcon('heroicon-m-eye')
                 ->chart([20, 24, 31, 28, 36, 41, 46])
                 ->color('info'),
-            Stat::make('Newsletter Subscribers', number_format($newsletterCount))
-                ->description('Owned audience growth')
+            Stat::make('Newsletter Community', number_format($newsletterCount))
+                ->description('People following your updates')
                 ->descriptionIcon('heroicon-m-envelope')
                 ->chart($growthTrend)
                 ->color('info'),
-            Stat::make('Published Articles', number_format($publishedArticles))
-                ->description(Blog::where('published', false)->count() . ' drafts awaiting workflow')
+            Stat::make('Stories Published', number_format($publishedArticles))
+                ->description(Blog::where('published', false)->count() . ' drafts being worked on')
                 ->descriptionIcon('heroicon-m-document-text')
                 ->chart([1, 2, 2, 4, 5, 7, $publishedArticles])
                 ->color('primary'),
-            Stat::make('Monthly Revenue Potential', '$' . number_format($monthlyRevenuePotential))
-                ->description('Estimated pipeline value')
+            Stat::make('Potential Income', '$' . number_format($monthlyRevenuePotential))
+                ->description('Value of active project requests')
                 ->descriptionIcon('heroicon-m-banknotes')
                 ->chart([8, 12, 18, 23, 31, 38, 45])
                 ->color('success'),
-            Stat::make('Open Opportunities', number_format($openOpportunities))
-                ->description(User::count() . ' team members can be assigned')
+            Stat::make('Work to be Done', number_format($openOpportunities))
+                ->description(User::count() . ' team members ready to help')
                 ->descriptionIcon('heroicon-m-briefcase')
                 ->chart([3, 6, 8, 7, 11, 13, $openOpportunities])
                 ->color('warning'),

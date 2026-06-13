@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ $title ?? config('app.name', 'Elvora Innovations') }}</title>
-    <meta name="description" content="Secure access to Elvora Innovations Command Center. Engineering the future of venture building.">
+    <meta name="description" content="Secure access to Elvora Success Platform. Engineering the future of venture building.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ asset('images/elvora-logo.png') }}">

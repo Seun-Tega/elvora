@@ -32,7 +32,7 @@
                     Designing next-generation healthcare applications that protect patient data, connect care teams seamlessly, and improve diagnostic clarity for clinical providers worldwide.
                 </p>
                 <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="{{ route('project') }}" class="px-8 py-4 bg-brand-primary hover:bg-brand-primaryDark text-white font-bold rounded-xl shadow-premium hover:shadow-premiumHover hover:scale-[1.02] transition-all">
+                    <a href="{{ route('project') }}" class="px-6 py-3 bg-brand-primary hover:bg-brand-primaryDark text-white font-bold rounded-xl shadow-premium hover:shadow-premiumHover hover:scale-[1.02] transition-all">
                         Consult Our Specialists
                     </a>
                 </div>
@@ -186,7 +186,7 @@
                 Partner with Elvora Innovation to design secure, compliant, and patient-focused healthcare solutions.
             </p>
             <div class="pt-4">
-                <a href="{{ route('project') }}" class="inline-flex px-8 py-4 bg-brand-primary hover:bg-brand-primaryDark text-white font-bold rounded-xl shadow-premium hover:shadow-premiumHover hover:scale-[1.02] transition-all">
+                <a href="{{ route('project') }}" class="inline-flex px-6 py-3 bg-brand-primary hover:bg-brand-primaryDark text-white font-bold rounded-xl shadow-premium hover:shadow-premiumHover hover:scale-[1.02] transition-all">
                     Consult Our Specialists
                 </a>
             </div>
